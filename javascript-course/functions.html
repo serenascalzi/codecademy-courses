@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li class="active"><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li><a href="loops.html">Loops</a></li>
+							<li><a href="iterators.html">Iterators</a></li>
+							<li><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li><a href="request1.html">Requests I</a></li>
+							<li><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Functions</h2>
+						<h3>Review Functions</h3>
+						<p>This unit introduced you to functions.</p>
+						<ul>
+							<li>Functions are written to perform a task.</li>
+							<li>Functions take data, perform a set of tasks on the data, and then return the result.</li>
+							<li>We can define parameters to be used when calling the function.</li>
+							<li>When calling a function, we can pass in arguments, which will set the function's parameters.</li>
+							<li>We can use return to return the result of a function which allows us to call functions anywhere, even inside other functions.</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// Function - Block of code designed to perform a task, accepts data, performs actions on that data, returns a result
+		// Write and Call takeOrder Function with Arrow Function Syntax
+		const takeOrder = () => {
+			console.log('Order: pizza');
+		}
+		
+		takeOrder();
+		
+		// Parameters - Variables in a function definition that represent data we can input into the function, receive arguments as their value
+		// Arguments - Provided when you call a function, values passed to parameter
+		// Call takeOrder Function with topping Parameter and Pass mushrooms Argument
+		const takeOrder = (topping) => {
+			console.log(`Order: pizza topped with ${topping}`);
+		};
+		
+		takeOrder('mushrooms');
+		
+		// Call takeOrder Function with Multiple Parameters and Pass Multiple Arguments
+		const takeOrder = (topping, crustType) => {
+			console.log(`Order: ${crustType} crust pizza topped with ${topping}`);
+		};
+		
+		takeOrder('bacon', 'thin');
+		takeOrder('pepperoni', 'regular');
+		takeOrder('sausage', 'thick');
+		takeOrder('banana peppers', 'gluten free');
+		
+		// Return - Keyword that returns a result, best practice to use when writing functions
+		// Write Pizza Check Program
+		let orderCount = 0;
+		
+		const takeOrder = (topping, crustType) => {
+			console.log('Order: ' + crustType + ' pizza topped with ' + topping);
+			orderCount++;
+		};
+		
+		const getSubTotal = (itemCount) => {
+			return itemCount * 7.5;
+		}
+		
+		takeOrder('mushroom', 'thin crust');
+		takeOrder('spinach', 'whole wheat');
+		takeOrder('pepperoni', 'brooklyn style');
+		console.log(getSubTotal(orderCount));
+		
+		// Use functions to section off small bits of logic or tasks, then use them when we need to
+		// Update Pizza Check Program
+		let orderCount = 0;
+		
+		const takeOrder = (topping, crustType) => {
+			orderCount++;
+			console.log('Order: ' + crustType + ' pizza topped with ' + topping);
+		};
+		
+		takeOrder('mushroom', 'thin crust');
+		takeOrder('spinach', 'whole wheat');
+		takeOrder('pepperoni', 'brooklyn style');
+		
+		const getSubTotal = (itemCount) => {
+			return itemCount * 7.5;
+		};
+		
+		const getTax = (itemCount) => {
+			return getSubTotal(itemCount) * 0.06;
+		}
+		
+		const getTotal = (itemCount) => {
+			return getSubTotal(itemCount) + getTax(itemCount);
+		}
+		
+		console.log(getSubTotal(orderCount));
+		
+		console.log(getTotal(orderCount));
+		
+		// Function Declaration - Bound to an identifier or name, do not end in a semi-colon
+		// Write and Call isGreaterThan Function with Function Declaration
+		function isGreaterThan (numberOne, numberTwo) {
+			if (numberOne > numberTwo) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		console.log(isGreaterThan(2,1));
+		
+		// Function Expressions - Similar to function declaration, identifier can be omitted, anonymous function, often stored in a variable, end with a semi-colon
+		// Refactor Function Declaration as Function Expression with Arrow Function Syntax
+		const isGreaterThan = (numberOne, numberTwo) => {
+			if (numberOne > numberTwo) {
+				return true;
+			} else {
+				return false;
+			}
+		};
+		
+		console.log(isGreaterThan(4, 8));
+		
+		/* The most condensed form of the function is known as concise body.
+		   1. Functions that take a single parameter should not use parentheses. The code will still work, but it's better practice to omit the parentheses around single parameters. However, if a function takes zero or multiple parameters, parentheses are required.
+		   2. A function composed of a sole single-line block is automatically returned. The contents of the block should immediately follow the arrow => and the return keyword can be removed. This is referred to as implicit return.
+		   3. A function composed of a sole single-line block does not need brackets. */
+		// Refactor Function with Principles Above
+		const volumeOfSphere = diameter =>
+			(1/6) * Math.PI * diameter * diameter * diameter;
+		
+		console.log('The volume of a sphere is ' + volumeOfSphere(10) + ' cubic centimeters');
+		</script>	
+	</body>	
+</html>

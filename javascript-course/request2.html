@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li><a href="loops.html">Loops</a></li>
+							<li><a href="iterators.html">Iterators</a></li>
+							<li><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li><a href="request1.html">Requests I</a></li>
+							<li class="active"><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Requests II</h2>
+						<h3>Review Requests II</h3>
+						<ol>
+							<li>GET and POST requests can be created a variety of ways.</li>
+							<li>We can asynchronously request data from APIs using AJAX. fetch() and async/await are new technologies developed in ES6 and ES7 respectively.</li>
+							<li>Promises are a new type of JavaScript object that represent data that will eventually be returned from a request.</li>
+							<li>fetch() is a web API that can be used to create requests. fetch() will return Promises.</li>
+							<li>We can chain .then() methods to handle Promises returned by fetch.</li>
+							<li>The .json() method converts a returned Promise to a JSON object.</li>
+							<li>async is a keyword that is used to create functions that will return Promises.</li>
+							<li>await is a keyword that is used to tell a program to continue moving through the message queue while a Promise resolves.</li>
+							<li>await can only be used within functions declared with async.</li>
+						</ol>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// Promise - Object that acts as a placeholder for requested data, resolves to requested value or failure request
+		/* The fetch() function
+		   1. creates a request object using the information provided to it
+		   2. sends that request object to the URL provided
+		   3. returns a Promise that ultimately resolves to a response object, which contains a lot of information, including (if everything went well), the information requested. */
+		// Ensure All Users Can Use Fetch with Polyfill @ https://github.com/github/fetch
+		// fetch GET
+		fetch('https://api-to-call.com/endpoint').then(response => {
+			if (response.ok) {
+				return response.json();
+			}
+			throw new Error('Request failed!');
+			}, networkError => {
+				console.log(networkError.message);
+			}).then(jsonResponse => jsonResponse);
+		
+		// Codecademy API Key 'AIzaSyC2r2q5xxmUKypub09IZQdh6sysDc5t01w'
+		// WindowOrWorkerGlobalScope.fetch() @ https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
+		// fetch POST
+		fetch ('https://api-to-call.com/endpoint', {
+			method: 'POST',
+			body: JSON.stringify({id: '200'})
+		}).then(response => {
+			if (response.ok) {
+				return response.json();
+			}
+			throw new Error('Request failed!');
+		}, networkError => console.log(networkError.message)
+		).then(jsonResponse => jsonResponse);
+		
+		// Post Request @ https://developers.google.com/web/updates/2015/03/introduction-to-fetch#post_request
+		// async - Keyword that creates a function that will return a Promise
+		// await - Keyword that tells the program to continue moving through the message queue while the Promise resolves
+		// try/catch - Statement that separates the code that will handle success from the code that will handle errors
+		// Because async/await are ES7, and therefore not yet supported by all browsers, it's essential to ensure code is transpiled, or converted, to an earlier version of JavaScript if using them. A useful tool for transpilation is Babel @ http://babeljs.io/.
+		// async await GET
+		async function getData() {
+			try {
+				let response = await fetch('https://api-to-call.com/endpoint');
+				if (response.ok) {
+					let jsonResponse = await response.json();
+					return jsonResponse;
+				}
+				throw new Error('Request failed!');
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		
+		// async await POST
+		async function getData() {
+			try {
+				let response = await fetch('https://api-to-call.com/endpoint', {
+					method: 'POST',
+					body: JSON.stringify({id: '200'})
+				});
+				if (response.ok) {
+					let jsonResponse = await response.json();
+					return jsonResponse;
+				}
+				throw new Error('Request failed!');
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		</script>	
+	</body>	
+</html>

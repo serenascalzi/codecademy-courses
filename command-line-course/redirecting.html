@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Learn the Command Line</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="navigating.html">Navigating the File System</a></li>
+							<li><a href="viewing.html">Viewing and Changing the File System</a></li>
+							<li class="active"><a href="redirecting.html">Redirecting Input and Output</a></li>
+							<li><a href="configuring.html">Configuring the Environment</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Learn the Command Line</h1>
+						<h2>Redirecting Input and Output</h2>
+						<p>Congratulations! You learned how to use the command line to redirect standard input and standard output. What can we generalize so far?</p>
+						<ul>
+						 	<li>Redirection reroutes standard input, standard output, and standard error.</li>
+						 	<li>The common redirection commands are:
+								<ul>
+								 	<li>&gt; redirects standard output of a command to a file, overwriting previous content.</li>
+								 	<li>&gt;&gt; redirects standard output of a command to a file, appending new content to old content.</li>
+								 	<li>&lt; redirects standard input to a command.</li>
+								 	<li>| redirects standard output of a command to another command.</li>
+								</ul>
+							</li>
+						 	<li>A number of other commands are powerful when combined with redirection commands:
+								<ul>
+								 	<li>sort: sorts lines of text alphabetically.</li>
+								 	<li>uniq: filters duplicate, adjacent lines of text.</li>
+								 	<li>grep: searches for a text pattern and outputs it.</li>
+								 	<li>sed: searches for a text pattern, modifies it, and outputs it.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+		</div>
+	</body>	
+</html>

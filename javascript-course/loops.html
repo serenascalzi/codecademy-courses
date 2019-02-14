@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li class="active"><a href="loops.html">Loops</a></li>
+							<li><a href="iterators.html">Iterators</a></li>
+							<li><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li><a href="request1.html">Requests I</a></li>
+							<li><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Loops</h2>
+						<h3>Review: Loops</h3>
+						<p>Great job! In this lesson, we learned how to write less repetitive code with loops.</p>
+						<ul>
+							<li>for loops allow us to repeat a block of code a known amount of times.</li>
+							<li>We can use a for loop inside another for loop to compare two lists.</li>
+							<li>while loops are for looping over a code block an unknown amount of times.</li>
+							<li>Infinite loops occur when stop conditions are never met.</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// For Loops - Loop a block of code a known amount of times
+		// While Loops - Loop a block of code an unknown amount of times
+		// Create vacationSpots Variable and Log Items from Array to Console
+		let vacationSpots = ['Austin','Denver','Phoenix'];
+		
+		console.log(vacationSpots[0]);
+		console.log(vacationSpots[1]);
+		console.log(vacationSpots[2]);
+		
+		// Write For Loop to Log Items from Array to Console and Add Text
+		for (let vacationSpotIndex = 0; vacationSpotIndex < vacationSpots.length; vacationSpotIndex++) {
+			console.log('I would love to visit ' + vacationSpots[vacationSpotIndex]);
+		}
+		
+		// Change For Loop to Log Items from Array to Console Backward
+		for (let vacationSpotIndex = vacationSpots.length - 1; vacationSpotIndex >= 0; vacationSpotIndex--) {
+			console.log('I would love to visit ' + vacationSpots[vacationSpotIndex]);
+		}
+		
+		// Nested For Loops - Inner for loop runs completely every time outer for loop runs once
+		// Write Nested For Loop with If Statement to Log Common Items from Arrays to Console
+		let myPlaces = ['Austin','Denver','Phoenix'];
+		let friendPlaces = ['Albuquerque','Denver','Vegas'];
+		
+		for (let myPlacesIndex = 0; myPlacesIndex < myPlaces.length; myPlacesIndex++) {
+			for (let friendPlacesIndex = 0; friendPlacesIndex < friendPlaces.length; friendPlacesIndex++) {
+				if (myPlaces[myPlacesIndex] === friendPlaces[friendPlacesIndex]) {
+					console.log(myPlaces[myPlacesIndex]);
+				}
+			}
+		}
+		
+		// Write Card Deck Program with While Loop
+		let cards = ['Diamond', 'Spade', 'Heart', 'Club'];
+		
+		let currentCard = 'Heart';
+		
+		while (currentCard !== 'Spade') {
+			console.log(currentCard);
+			currentCard = cards[Math.floor(Math.random() * 4)];  
+		}
+		
+		console.log('Found a spade!');
+		
+		// Infinite Loops - Stopping condition is never reached due to error in logic of loop
+		// Infinite Loop Avoided with Break Keyword
+		let flag = true;
+		let counter = 0;
+		while(flag === true){
+			console.log(counter);
+			counter+=1;
+			if (counter === 37){
+				break;
+			}
+		}
+		</script>	
+	</body>	
+</html>

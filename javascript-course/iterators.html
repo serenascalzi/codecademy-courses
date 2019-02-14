@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li><a href="loops.html">Loops</a></li>
+							<li class="active"><a href="iterators.html">Iterators</a></li>
+							<li><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li><a href="request1.html">Requests I</a></li>
+							<li><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Iterators</h2>
+						<h3>Review: Iterators</h3>
+						<p>You have learned a number of useful methods in this lesson as well as how to use the JavaScript documentation from the Mozilla Developer Network to discover and understand additional methods. Let's review!</p>
+						<ul>
+							<li>.forEach() is used to execute the same code on every element in an array but does not change the array and returns undefined.</li>
+							<li>.map() executes the same code on every element in an array and returns a new array with the updated elements.</li>
+							<li>.filter() checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.</li>
+							<li>All iterator methods can be written using arrow function syntax. In fact, given the succinctness and the implicit return of arrow function syntax, this is quickly becoming the preferred way to write these types of method calls.</li>
+							<li>You can visit the Mozilla Developer Network to learn more about iterator methods (and all other parts of JavaScript!).</li>
+							<li>Additional iterator methods such as .some(), .every(), .reduce() perform different functions.</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// Iterators - Methods called on arrays that complete such tasks as altering each element and selecting elements that fit certain criteria
+		// forEach - Iterator method that executes the same code on each element of an array
+		/* There are three important things to know about the .forEach() method.
+		   1. It is an array method. It must be called upon an array.
+		   2. Any changes to the iterated array value won't be updated in the original array.
+		   3. The return value is undefined. */
+		// Log Text and Items from Array to Console with forEach Method
+		let fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+		
+		fruits.forEach(function(fruit) {
+			console.log('I want to eat a ' + fruit + '.');
+		});
+		
+		// Refactor Method Call Above with Arrow Function Syntax
+		fruits.forEach(fruit =>
+			console.log('I want to eat a ' + fruit + '.'));
+		
+		// map - Iterator method that changes the array it is called upon, returns a new array with modified elements
+		// Log secretMessage Array to Console with map Method
+		let animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+		
+		let secretMessage = animals.map(function(message) {
+			return message.charAt(0);
+		});
+		
+		console.log(secretMessage.join(''));
+		
+		// Refactor Method Call Above with Arrow Function Syntax
+		let secretMessage = animals.map(message => message.charAt(0));
+		
+		// Create smallNumbers Array with map Method
+		let bigNumbers = [100, 200, 300, 400, 500];
+		
+		let smallNumbers = bigNumbers.map(function(numbers) {
+			return numbers / 100;  
+		});
+		
+		// filter - Iterator method that returns a new array with truthy elements from the original array
+		// Create smallNumbers Array with filter Method
+		let randomNumbers = [375, 200, 3.14, 7, 13, 852];
+		
+		let smallNumbers = randomNumbers.filter(function(number) {
+			return number < 250;  
+		});
+		
+		// Create longFavoriteWords Array with filter Method
+		let favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+		
+		let longFavoriteWords = favoriteWords.filter(function(word) {
+			return word.length > 7;
+		});
+		
+		// Refactor Method Call Above with Arrow Function Syntax
+		let longFavoriteWords = favoriteWords.filter( word => word.length > 7);
+		
+		// Array Library @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+		// Iterator Methods @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods
+		// Test Array with some Method
+		let words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
+		
+		console.log(words.some(function(word) {
+			return word.length < 6;
+		}));
+		
+		// Create interestingWords Array with filter Method
+		let interestingWords = words.filter(function(word) {
+			return word.length > 5;  
+		});
+		
+		// Test Array with every Method
+		console.log(interestingWords.every(word =>
+			word.length > 5));
+			
+		// Return undefined with forEach Method
+		let cities = ['Nashville', 'Charlotte', 'Asheville', 'Austin', 'Boulder'];
+		
+		cities.forEach(city => console.log('Have you visited ' + city + '?'));
+		
+		// Return New Array with filter Method
+		let longCities = cities.filter(city => city.length > 7);
+		
+		// Return New Array with map Method
+		let nums = [1, 50, 75, 200, 350, 525, 1000];
+		
+		let smallerNums = nums.map(num => num - 5);
+		
+		// Return Boolean Value with Some Method - or Every
+		nums.some(num => num < 0);
+		</script>	
+	</body>	
+</html>

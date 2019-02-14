@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li><a href="loops.html">Loops</a></li>
+							<li><a href="iterators.html">Iterators</a></li>
+							<li><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li class="active"><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li><a href="request1.html">Requests I</a></li>
+							<li><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Browser Compatibility and Transpilation</h2>
+						<h3>Review</h3>
+						<p>In this lesson, you learned about browser compatibility and transpilation. Let's review the key concepts:</p>
+						<ul>
+							<li>ES5 — The old JavaScript version that is supported by all modern web browsers.</li>
+							<li>ES6 — The new(er) JavaScript version that is not supported by all modern web browsers. The syntax is more readable, similar to other programming languages, and addresses the source of common bugs in ES5.</li>
+							<li>caniuse.com — a website you can use to look up HTML, CSS, and JavaScript browser compatibility information.</li>
+							<li>Babel — A JavaScript package that transpiles JavaScript ES6+ code to ES5.</li>
+							<li>npm init — A terminal command that creates a package.json file.</li>
+							<li>package.json — A file that contains information about a JavaScript project.</li>
+							<li>npm install — A command that installs Node packages.</li>
+							<li>babel-cli — A Node package that contains command line tools for Babel.</li>
+							<li>babel-preset-env — A Node package that contains ES6+ to ES5 syntax mapping information.</li>
+							<li>.babelrc — A file that specifies the version of the JavaScript source code.</li>
+							<li>"build" script — A package.json script that you use to tranpsile ES6+ code to ES5.</li>
+							<li>npm run build — A command that runs the build script and transpiles ES6+ code to ES5.</li>
+						</ul>
+						<p>For future reference, here is a list of the steps needed to set up a project for transpilation:</p>
+						<ol>
+							<li>Initialize your project using npm init and create a directory called src</li>
+							<li>Install babel dependencies by running<br>
+							npm install babel-cli -D<br>
+							npm install babel-preset-env -D</li>
+							<li>Create a .babelrc file inside your project and add the following code inside it:<br>
+							{ "presets": ["env"] }</li>
+							<li>Add the following script to your scripts object in package.json:<br>
+							"build": "babel src -d lib"</li>
+							<li>Run npm run build whenever you want to transpile your code from your src to lib directories.</li>
+						</ol>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// Browser Compatibility Resources @ caniuse.com
+		// Set Variables Equal to Browser Support Percentages from Website Above
+		let esFivePercentageSupport = 97.88;
+		let esSixTemplateLiterals = 89.23;
+		
+		/* Three reasons for the JavaScript ES5 to JavaScript ES6 updates are listed below:
+		   1. A similarity to other programming languages — JavaScript ES6 is syntactically more similar to other object-oriented programming languages. This leads to less friction when experienced, non-JavaScript developers want to learn JavaScript.
+		   2. Readability and economy of code — The new syntax is often easier to understand (more readable) and requires fewer characters to create the same functionality (economy of code).
+		   3. Addresses sources of ES5 bugs — Some ES5 syntax led to common bugs. With ES6, Ecma introduced syntax that mitigates some of the most common pitfalls. */
+		// JavaScript ES6 Project
+		var pasta = "Spaghetti"; // ES5 syntax
+		
+		const meat = "Pancetta"; // ES6 syntax
+		
+		let sauce = "Eggs and cheese"; // ES6 syntax
+		
+		// Template literals, like the one below, were introduced in ES6
+		const carbonara = `You can make carbonara with ${pasta}, ${meat}, and a sauce made with ${sauce}.`;
+		
+		// JavaScript ES5 Project
+		var pasta = "Spaghetti";
+		
+		var meat = "Pancetta";
+		
+		var sauce = "Eggs and cheese";
+		
+		var carbonara = `You can make carbonara with ` + pasta + ` , ` + meat + ` , and a sauce made with  ` + sauce + `.`;
+		
+		// Transpilation - Process of converting one programming language to another
+		// Install Babel Packages Thru Terminal
+		npm install babel-cli
+		npm install babel-preset-env
+		npm run build
+		
+		// NPM - Node Package Manager, used to access and manage Node packages or directories that contain JavaScript code written by others
+		/* A package.json file contains information about the current JavaScript project. Some of this information includes:
+		   - Metadata — This includes a project title, description, authors, and more. Add title and description at minimum.
+		   - A list of node packages required for the project — If another developer wants to run your project, npm looks inside package.json and downloads the packages in this list.
+		   - Key-value pairs for command line scripts — You can use npm to run these shorthand scripts to perform some process. In a later exercise, we will add a script that runs Babel and transpiles ES6 to ES5. */
+		// Create package.json File with Properties Below and Display File Structure
+		npm init
+		name — learning-babel
+		description — Use Babel to transpile JavaScript ES6 to ES5
+		ls
+		
+		// Install Packages for Command Line Babel Tools and Mapping JavaScript Features with Dependencies
+		npm install babel-cli -D
+		npm install babel-preset-env -D
+		
+		// Create .babelrc File 
+		touch .babelrc
+		
+		// Create Object to Define Preset, Specifies Initial JavaScript File Version
+		{
+			"presets": ["env"]
+		}
+		
+		// Add build Script to package.json to Transpile Code
+		{
+			"name": "learn-javascript-transpilation-bct-npm-init",
+			"version": "1.0.0",
+			"description": "",
+			"main": "index.js",
+			"scripts": {
+				"test": "echo \"Error: no test specified\" && exit 1",
+				"build": "babel src -d lib" // Script Added with Comma Above
+			},
+			"author": "",
+			"license": "ISC",
+			"devDependencies": {
+				"babel-cli": "^6.24.1",
+				"babel-preset-env": "^1.5.2"
+			}
+		}
+		
+		// Transpile All JavaScript Files in src Folder to lib
+		npm run build
+		</script>	
+	</body>	
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li><a href="loops.html">Loops</a></li>
+							<li><a href="iterators.html">Iterators</a></li>
+							<li class="active"><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li><a href="request1.html">Requests I</a></li>
+							<li><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Objects</h2>
+						<h3>Review: Objects</h3>
+						<p>Way to go! Let's review what we learned in this lesson:</p>
+						<ul>
+							<li>Objects store key-value pairs and let us represent real-world things in JavaScript.</li>
+							<li>Properties in objects are separated by commas. Key-value pairs are always separated by a colon.</li>
+							<li>You can add or edit a property within an object with dot notation.</li>
+							<li>A method is a function in an object.</li>
+							<li>this helps us with scope inside of object methods. this is a dynamic variable that can change depending on the object that is calling the method.</li>
+							<li>Getter and setter methods allow you to process data before accessing or setting property values.</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// Objects - Containers that can store data and functions
+		// Key - Allows access to the data stored in an object with key-value pairs
+		// Create Variable person, Set Equal to Object, and Make name and age Keys with My Values
+		let person = {
+			name: 'Serena',
+			age: 36
+		};
+		
+		// Log name and age to Console with Dot Notation
+		console.log(person.name);
+		console.log(person.age);
+		
+		// Log name and age to Console with Bracket Notation
+		console.log(person['name']);
+		console.log(person['age']);
+		
+		/* Bracket notation is required to use variables to look up keys within an object. 
+		   It's not possible to use variables like this with dot notation. */
+		// Write Alarm Program
+		let person = {
+			name: 'Serena',
+			age: 36,
+			weekendAlarm : 'No alarms needed',
+			weekAlarm: 'Alarm set to 7AM'
+		};
+		
+		console.log(person['name']);
+		console.log(person['age']);
+		
+		let day = 'Monday';
+		let alarm;
+		
+		if (day === 'Saturday' || day === 'Sunday') {
+			alarm = 'weekendAlarm';
+		} else {
+			alarm = 'weekAlarm';
+		}
+		
+		console.log(person[alarm]);
+		
+		// Mutable - Objects that can be changed after being created, even objects saved to const variable!
+		// Add hobbies Array to person Object with Dot Notation
+		person.hobbies = ['Design', 'Photography'];
+		
+		// Log Hobbies Property to Console
+		console.log(person['hobbies']);
+		
+		// Edit hobbies Array with Dot Notation
+		person.hobbies = ['Graphic Design'];
+		
+		// Method - Objects with key-function pairs
+		// Add sayHello Method to person Object and Log to Console
+		// Add sayGoodbye Method with ES6 Method Syntax
+		let person = {
+			name: 'Serena',
+			age: 36,
+			weekendAlarm : 'No alarms needed',
+			weekAlarm: 'Alarm set to 7AM',
+			sayHello: () => {
+				return 'Hello, there!';
+			},
+			sayGoodbye() {
+				return 'Goodbye!';
+			}
+		};
+		
+		console.log(person.sayHello());
+		
+		// Write Function Using Property in Enclosing Scope with this Keyword - USE ` Instead of '!
+		let person = {
+			name: 'Tyron',
+			age: 40,
+			weekendAlarm: 'No alarms needed',
+			weekAlarm: 'Alarm set to 7AM',
+			
+			sayHello: function() {
+				return `Hello, my name is ${this.name}`;
+			},
+			
+			sayGoodbye() {
+				return 'Goodbye!';
+			}
+		};
+		
+		// Create friend Object, Set sayHello Methods Equal, and Log to Console
+		let friend = {
+			name: 'Kerry'
+		};
+		
+		friend.sayHello = person.sayHello;
+		
+		console.log(friend.sayHello());
+		
+		// Getter and Setter Methods - Get and set the properties inside of an object
+		/* There are a couple of advantages to using these methods for getting and setting properties directly:
+		   1. You can check if new data is valid before setting a property.
+		   2. You can perform an action on the data while you are getting or setting a property.
+		   3. You can control which properties can be set and retrieved. */
+		/* Developers use an underscore before a property name to indicate a property or value should not be modified directly by other code. 
+		   We recommend prepending all properties with an underscore, and creating setters for all attributes you want to access later in your code. */
+		// Validate and Change age Property of person Object with Setter Method
+		let person = {
+			_name: 'Lu Xun',
+			_age: 137,
+			set age(newAge) {
+				if (typeof newAge === 'number') {
+					this._age = newAge;
+				} else {
+					return 'Invalid input';
+				}
+			}
+		};
+		
+		// Set age Property to 39 with Dot Notation
+		person.age = 39;
+		
+		// Get age Property of person Object with Getter Method and Log to Console
+		let person = {
+			_name: 'Lu Xun',
+			_age: 137,
+			set age(newAge) {
+				if (typeof newAge === 'number') {
+					this._age = newAge;
+				} else {
+					return 'Invalid input';
+				}
+			},
+			get age() {
+				console.log(`${this._name} is ${this._age} years old.`);
+				return this._age;
+			}
+		};
+		
+		console.log(person.age);
+		</script>	
+	</body>	
+</html

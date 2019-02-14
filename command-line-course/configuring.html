@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Learn the Command Line</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="navigating.html">Navigating the File System</a></li>
+							<li><a href="viewing.html">Viewing and Changing the File System</a></li>
+							<li><a href="redirecting.html">Redirecting Input and Output</a></li>
+							<li class="active"><a href="configuring.html">Configuring the Environment</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Learn the Command Line</h1>
+						<h2>Configuring the Environment</h2>
+						<p>Congratulations! You learned to use the bash profile to configure the environment. What can we generalize so far?</p>
+						<ul>
+						 	<li>The environment refers to the preferences and settings of the current user.</li>
+						 	<li>The nano editor is a command line text editor used to configure the environment.</li>
+						 	<li>~/.bash_profile is where environment settings are stored. You can edit this file with nano.</li>
+						 	<li>environment variables are variables that can be used across commands and programs and hold information about the environment.
+								<ul>
+								 	<li>export VARIABLE="Value" sets and exports an environment variable.</li>
+								 	<li>USER is the name of the current user.</li>
+								 	<li>PS1 is the command prompt.</li>
+								 	<li>HOME is the home directory. It is usually not customized.</li>
+								 	<li>PATH returns a colon separated list of file paths. It is customized in advanced cases.</li>
+								 	<li>env returns a list of environment variables.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+		</div>
+	</body>	
+</html>

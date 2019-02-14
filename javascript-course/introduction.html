@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li class="active"><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li><a href="loops.html">Loops</a></li>
+							<li><a href="iterators.html">Iterators</a></li>
+							<li><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li><a href="request1.html">Requests I</a></li>
+							<li><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Introduction</h2>
+						<h3>Review Types and Operators</h3>
+						<p>Let's take one more glance at the concepts we just learned:</p>
+						<ul>
+							<li>Four essential data types in JavaScript include strings, numbers, booleans, and null.</li>
+							<li>Data is printed, or logged, to the console with console.log().</li>
+							<li>Four built-in mathematical operators include +, -, *, and /.</li>
+							<li>JavaScript associates certain properties with different data types.</li>
+							<li>JavaScript has built-in methods for different data types.</li>
+							<li>Libraries are collections of methods that can be called without an instance.</li>
+							<li>You can write single-line comments with // and multi-line comments between /* and */.</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// Log Favorite Pizza Topping to Console
+		console.log("Banana Peppers");
+	
+		// Log Favorite Movie to Console
+		console.log("Sabrina");
+	
+		// Primitive Data Types - Simplest built-in forms of data, included below
+		// Log String to Console - Any grouping of keyboard characters surrounded by single or double quotes
+		console.log('JavaScript');
+	
+		// Log Number to Console - Any number, including numbers with decimals
+		console.log(33.7);
+	
+		// Log Boolean to Console - Either true or false, with no quotations
+		console.log(true);
+	
+		// Log Null to Console - Can only be null, absence of value
+		console.log(null);
+	
+		// Math Operators
+		// Log Add Operator to Console
+		console.log(36 + 3.5);
+	
+		// Log Subtract Operator to Console
+		console.log(2018 - 1969);
+	
+		// Log Divide Operator to Console
+		console.log(65 / 240);
+	
+		// Log Multiply Operator to Console
+		console.log(0.2708 * 100);
+	
+		// Instance - Individual case of a data type, object
+		// Log Number of Characters in String to Console with Length Property
+		console.log('Teaching the world how to code'.length);
+	
+		// Methods - Calculate new information, perform actions that generate an output
+		// String Library @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype
+		// Math Library @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+		// Number Library @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+		// Log String to Console in All Caps with toUpperCase Method
+		console.log('Codecademy'.toUpperCase());
+	
+		// Log String to Console without Whitespace with Trim Method
+		console.log('    Remove whitespace   '.trim());
+	
+		// Libraries - Contain methods that you can call without creating an instance
+		// Log Random Number Multiplied by 100 to Console with Random Method from Math Library
+		console.log(Math.random() * 100);
+	
+		// Log Resulting Whole Number to Console with Floor Method from Math Library
+		console.log(Math.floor(Math.random() * 100));
+	
+		// Log Smallest Integer Greater Than or Equal to 43.8 to Console with Ceil Method from Math Library
+		console.log(Math.ceil(43.8));
+	
+		// Log if 2017 is Integer to Console with isInteger Method from Number Library
+		console.log(Number.isInteger(2017));
+	
+		// Comments - Not evaluated by programs, describe what the code does
+		// Single Line Comment - Comment out a single line, denoted with two forward slashed preceding line
+		// Multi-line Comment - Comment out multiple lines, denoted with /* to begin and */ to end comment
+		/* Examples of single line comments are above,
+		   while this is an example of a
+		   multi-line comment!*/
+		</script>	
+	</body>	
+</html>

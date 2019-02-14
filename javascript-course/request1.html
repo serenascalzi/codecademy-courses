@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>	
+		<title>Introduction to JavaScript</title>	
+		<script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+		<script src="js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
+		<script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+		<link href="css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div id="content_left">
+						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="variables.html">Variables</a></li>
+							<li><a href="controlflow.html">Control Flow</a></li>
+							<li><a href="functions.html">Functions</a></li>
+							<li><a href="scope.html">Scope</a></li>
+							<li><a href="arrays.html">Arrays</a></li>
+							<li><a href="loops.html">Loops</a></li>
+							<li><a href="iterators.html">Iterators</a></li>
+							<li><a href="objects.html">Objects</a></li>
+							<li><a href="classes.html">Classes</a></li>
+							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+							<li><a href="modules.html">Modules</a></li>
+							<li class="active"><a href="request1.html">Requests I</a></li>
+							<li><a href="request2.html">Requests II</a></li>
+							<li><a href="../index.html">&larr; Back to Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div id="content_right">
+						<h1>Introduction to JavaScript</h1>
+						<h2>Requests I</h2>
+						<h3>Review Requests I</h3>
+						<ol>
+							<li>JavaScript is the language of the web because of its asynchronous capabilities. A set of tools that are used together to take advantage of JavaScript's asynchronous capabilities is called AJAX, which stands for Asynchronous JavaScript and XML.</li>
+							<li>There are four HTTP request methods, two of which are GET and POST.</li>
+							<li>GET requests only request information from other sources.</li>
+							<li>POST methods can introduce new information to other sources in addition to requesting it.</li>
+							<li>GET requests can be written using an XMLHttpRequest object and vanilla JavaScript.</li>
+							<li>POST requests can also be written using an XMLHttpRequest object and vanilla JavaScript.</li>
+							<li>Writing GET and POST requests with XHR objects and vanilla JavaScript requires constructing the XHR object using new, setting the responseType, creating a function that will handle the response object, and opening and sending the request.</li>
+							<li>Much of the boilerplate used to write GET and POST requests with XHR and vanilla JavaScript can be reduced by using the $.ajax() method from the jQuery library.</li>
+							<li>jQuery provides other helper methods that can further reduce boilerplate such as $.get(), $.post(), and $.getJSON().</li>
+							<li>Determining how to correctly write the requests and how to properly implement them requires carefully reading the documentation of the API with which you're working.</li>
+						</ol>
+					</div>
+				</div>
+            </div>
+		</div>
+
+		<script type="text/javascript">	
+		// AJAX - Asynchronous JavaScript and XML
+		// Google URL Shortener @ https://developers.google.com/url-shortener/v1/getting_started
+		// Google URL Shortener API @ https://www.codecademy.com/articles/google-api
+		// Codecademy API Key 'AIzaSyC2r2q5xxmUKypub09IZQdh6sysDc5t01w'
+		// HTTP Requests - GET, POST, PUT, DELETE
+		// GET - Receive information from other sites by sending a query, like a search
+		// POST - Can change information on another site and will receive information or data in response, introduce new information
+		// XHR - XMLHttpRequest object used to retrieve data
+		// XHR Response Types @ https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType
+		// XMLHttpRequest GET
+		const xhr = new XMLHttpRequest();
+		const url = 'https://api-to-call.com/endpoint';
+		
+		xhr.responseType = 'json';
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState === XMLHttpRequest.DONE) {
+				// Code to execute with response
+				console.log(xhr.response); 
+			}
+		};
+		
+		xhr.open('GET', url);
+		xhr.send();
+		
+		// Google URL Shortener API Reference @ https://developers.google.com/url-shortener/v1/
+		// Use DevTools @ https://www.codecademy.com/articles/use-devtools
+		// XMLHttpRequest POST
+		const xhr = new XMLHttpRequest();
+		const url = 'https://api-to-call.com/endpoint';
+		const data = JSON.stringify({id: 200});
+		
+		xhr.responseType = 'json';
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState === XMLHttpRequest.DONE) {
+				// Code to execute with response
+				console.log(xhr.response); 
+			}
+		};
+		
+		xhr.open('POST', url);
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		xhr.send(data);
+		
+		// jQuery GET
+		$.ajax({
+			url: 'https://api-to-call.com/endpoint',
+			type: 'GET',
+			dataType: 'json',
+			success(response) {
+				// Code to execute with response on success
+				console.log(response);
+			},
+			error(jqXHR, status, errorThrown) {
+				// Code to execute with response on failure
+				console.log(jqXHR);
+			}
+		});
+		
+		// jQuery POST
+		$.ajax({
+			url: 'https://api-to-call.com/endpoint',
+			type: 'POST',
+			data: JSON.stringify({id: 200}),
+			dataType: 'json',
+			contentType: 'application/json',
+			success(response) {
+				// Code to execute with response on success
+				console.log(response);
+			},
+			error(jqXHR, status, errorThrown) {
+				// Code to execute with response on failure
+				console.log(jqXHR);
+			}
+		});
+		
+		// Refactor expandUrl() Function with $.get() Method
+		function expandUrl() {
+			const urlToExpand = url + '?key=' + apiKey + '&shortUrl=' + $inputField.val();
+			$.get(urlToExpand, response => {
+				$responseField.append('<p>Your expanded url is: </p><p>' + response.longUrl + '</p>');
+			}, 'json');
+		}
+		
+		// jQuery.post() @ https://api.jquery.com/jquery.post/
+		// Refactor shortenUrl() Function with $.post() Method
+		function shortenUrl() {
+			const urlWithKey = url + '?key=' + apiKey;
+			const urlToShorten = $inputField.val();
+			$.post({
+				url: urlWithKey,
+				data: JSON.stringify({longUrl: urlToShorten}),
+				dataType: 'json',
+				contentType: 'application/json',
+				success(response) {
+					$responseField.append('<p>Your shortened url is: </p><p>' + response.id + '</p>');
+				},
+				error(jqXHR, status, errorThrown) {
+					console.log(jqXHR);
+				}
+			});
+		}
+
+		// jQuery.getJSON() @ http://api.jquery.com/jquery.getjson/
+		// Refactor expandUrl() Function with $.getJSON() Method
+		function expandUrl() {
+			const urlToExpand = url + '?key=' + apiKey + '&shortUrl=' + $inputField.val();
+			$.getJSON(urlToExpand, response => {
+				$responseField.append('<p>Your expanded url is: </p><p>' + response.longUrl + '</p>');
+			});
+		}
+		</script>	
+	</body>	
+</html>
