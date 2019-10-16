@@ -23,12 +23,12 @@
 							<li><a href="introduction.html">Introduction to PHP</a></li>
 							<li><a href="strings.html">PHP Strings and Variables</a></li>
 							<li><a href="numbers.html">PHP Numbers</a></li>
-							<li class="active"><a href="functions.html">Introduction to PHP Functions</a></li>
+							<li><a href="functions.html">Introduction to PHP Functions</a></li>
 							<li><a href="builtin.html">Intro to Built-in PHP Functions</a></li>
 							<li><a href="ordered.html">Ordered Arrays</a></li>
 							<li><a href="associative.html">Associative Arrays</a></li>
 							<li><a href="html.html">PHP and HTML</a></li>
-							<li><a href="form.html">HTML Form Handling in PHP</a></li>
+							<li class="active"><a href="form.html">HTML Form Handling in PHP</a></li>
 							<li><a href="comparison.html">Booleans and Comparison Operators</a></li>
 							<li><a href="conditions.html">Logical Operators and Compound Conditions</a></li>
 							<li><a href="loops.html">Loops</a></li>
@@ -44,24 +44,21 @@
 				<div class="col-md-10">
 					<div id="content_right">
 						<h1>Learn PHP</h1>
-						<h2>Introduction to PHP Functions</h2>
+						<h2>HTML Form Handling in PHP</h2>
 						<h3>Review</h3>
-						<p>Great job! Let’s review what we covered in this lesson:</p>
+						<p>You’re ready to start handling forms in PHP!</p>
+						<p>To review:</p>
 						<ul>
-							<li>We can package a set of instructions within a named <em>function</em> to reuse whenever we’d like.</li>
-							<li>When we <em>invoke</em> a function, the computer will execute the function body, specified by the code block following the parameters list.</li>
-							<li>Functions can return a value by using the return keyword otherwise they return NULL which means no value.</li>
-							<li>We can store the return value of a function in a variable or use it any other way we’d use a value.</li>
-							<li>We can define functions with <em>parameters</em> which are variables we can refer to throughout our function’s body.</li>
-							<li>When invoking functions, the values that we give them are called <em>arguments</em>.</li>
-							<li>Functions can have multiple parameters.</li>
-							<li>The order in which the arguments are passed in decides which parameters they correspond to.</li>
-							<li>You can make an argument optional by providing its corresponding parameter with a default value.</li>
-							<li>If you preprend a parameter with the reference sign (&) that argument will be passed by reference.</li>
-							<li>Variables within functions have local scope and can not be accessed from outside the function.</li>
-							<li>Use the global keyword to use variables from the global scope within a function.</li>
+							<li>< ?= is shorthand for < ?php echo.</li>
+							<li>PHP provides superglobals which can be accessed anywhere in the script.</li>
+							<ul>
+								<li>$_GET is an associative array containing data from a GET request.</li>
+								<li>$_POST is an associative array containing data from a POST request.</li>
+								<li>$_REQUEST is an associative array containing data from both GET and POST requests. It should only be used if you don’t care which method was used.</li>
+							</ul>
+							<li>The array keys in the PHP request superglobals are set by the name attributes in the HTML form, which need to be unique.</li>
+							<li>The action attribute is used to specify which file should handle data from the form request.</li>
 						</ul>
-						<img src="images/functions.jpg" alt="Syntax for Defining and Calling Functions" />
 					</div>
 				</div>
             </div>
