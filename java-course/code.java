@@ -101,7 +101,69 @@
 		}
 	}
 
-// Conditionals and Control Flow
+// Conditionals and Control Flow - Order.java
+	public class Order {
+		boolean isFilled;
+		double billAmount;
+		String shipping;
+
+		public Order(boolean filled, double cost, String shippingMethod) {
+			if (cost > 24.00) {
+				System.out.println("High value item!");
+			} else {
+				System.out.println("Low value item!");
+			}
+			isFilled = filled;
+			billAmount = cost;
+			shipping = shippingMethod;
+		}
+
+		public void ship() {
+			if (isFilled) {
+				System.out.println("Shipping");
+			} else {
+				System.out.println("Order not ready");
+			}
+
+			double shippingCost = calculateShipping();
+
+			System.out.println("Shipping cost: ");
+			System.out.println(shippingCost);
+		}
+
+		public double calculateShipping() {
+			double shippingCost;
+			switch (shipping) {
+				case "Regular":
+					shippingCost = 0;
+					break;
+				case "Express":
+					shippingCost = 1.75;
+					break;
+				default:
+					shippingCost = .50; 
+			}
+			return shippingCost;
+		}
+
+		public static void main(String[] args) {
+			// create instances and call methods here!
+			System.out.println("ORDER #1:");
+			Order order1 = new Order(true, 25.00, "Regular");
+			order1.ship();
+			order1.calculateShipping();
+
+			System.out.println("ORDER #2:");
+			Order order2 = new Order(false, 23.00, "Express");
+			order2.ship();
+			order2.calculateShipping();
+
+			System.out.println("ORDER #3:");
+			Order order3 = new Order(true, 24.00, "Overnight");
+			order3.ship();
+			order3.calculateShipping();
+		}
+	}
 
 // Conditional Operators
 
