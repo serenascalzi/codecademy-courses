@@ -1,7 +1,7 @@
 // Hello World - Review.java
 	public class Review {
 		public static void main(String[] args) {
-			// The main method executes the tasks of the class
+			// Main Method Executes Tasks of Class
 			System.out.println("My first Java program from scratch!");
 		}
 	}
@@ -147,7 +147,7 @@
 		}
 
 		public static void main(String[] args) {
-			// create instances and call methods here!
+			// Create Instances & Call Methods
 			System.out.println("ORDER #1:");
 			Order order1 = new Order(true, 25.00, "Regular");
 			order1.ship();
@@ -165,7 +165,56 @@
 		}
 	}
 
-// Conditional Operators
+// Conditional Operators - Reservation.java
+	public class Reservation {
+		int guestCount;
+		int restaurantCapacity;
+		boolean isRestaurantOpen;
+		boolean isConfirmed;
+
+		public Reservation(int count, int capacity, boolean open) {
+			if (count < 1 || count > 8) {
+				System.out.println("Invalid reservation!");
+			}
+			guestCount = count;
+			restaurantCapacity = capacity;
+			isRestaurantOpen = open;
+		}
+
+		public void confirmReservation() {
+			if (restaurantCapacity >= guestCount && isRestaurantOpen) {
+				System.out.println("Reservation confirmed");
+				isConfirmed = true;
+			} else {
+				System.out.println("Reservation denied");
+				isConfirmed = false;
+			}
+		}
+
+		public void informUser() {
+			if (!isConfirmed) {
+				System.out.println("Unable to confirm reservation, please contact restaurant.");
+			} else {
+				System.out.println("Please enjoy your meal!");
+			}
+		}
+
+		public static void main(String[] args) {
+			// Create Instances & Call Methods
+			System.out.println("RESERVATION #1:");
+			Reservation reservation1 = new Reservation(10, 20, true);
+
+			System.out.println("RESERVATION #2:");
+			Reservation reservation2 = new Reservation(4, 20, true);
+			reservation2.confirmReservation();
+			reservation2.informUser();
+
+			System.out.println("RESERVATION #3:");
+			Reservation reservation3 = new Reservation(8, 4, false);
+			reservation3.confirmReservation();
+			reservation3.informUser();
+		}
+	}
 
 // Arrays
 
