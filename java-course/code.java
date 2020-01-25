@@ -231,7 +231,41 @@
 		}
 	}
 
-// ArrayLists
+// ArrayLists - List.java
+	import java.util.ArrayList;
+
+	class List {
+		public static void main(String[] args) {
+			// Create ArrayList
+			ArrayList<String> taskList = new ArrayList<String>();
+
+			// Add New Items
+			String task1 = "Task 1";
+			String task2 = "Task 2";
+			String task3 = "Task 3";
+			taskList.add(task1);
+			taskList.add(task2);
+			taskList.add(task3);
+			System.out.println("Task List: " + taskList);
+
+			// Access Size
+			System.out.println("List Size: " + taskList.size());
+
+			// Find Item by Index
+			System.out.println("Item Index 2: " + taskList.get(2));
+
+			// Change Value of Item
+			taskList.set(2, "Third Task");
+			System.out.println("Task List: " + taskList.toString());
+
+			// Remove Item with Specific Value
+			taskList.remove("Third Task"); // or 2
+			System.out.println("Task List: " + taskList.toString());
+
+			// Retrieve Index of Item with Specific Value
+			System.out.println("Task 1 Index: " + taskList.indexOf("Task 1"));
+		}
+	}
 
 // Loops
 
