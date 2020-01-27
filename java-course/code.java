@@ -268,6 +268,77 @@
 	}
 
 // Loops
+	// LuckyFive.java
+	import java.util.Random;
+
+	class LuckyFive {
+		public static void main(String[] args) {
+			// Create Random Number Generator
+			Random randomGenerator = new Random();
+
+			// Generate Number Between 1 & 6
+			int dieRoll = randomGenerator.nextInt(6) + 1;
+
+			// Repeat While Roll Isn't 5
+			while (dieRoll != 5) {
+				System.out.println("Die Roll: " + dieRoll);
+				dieRoll = randomGenerator.nextInt(6) + 1;
+			}
+		}
+	}
+
+	// Coffee.java
+	class Coffee {
+		public static void main(String[] args) {
+			// Initialize cupsOfCoffee
+			int cupsOfCoffee = 1;
+
+			// Add While Loop
+			while (cupsOfCoffee <= 10) {
+				System.out.println("Fry drinks cup of coffee #" + cupsOfCoffee);
+				cupsOfCoffee++;
+			}
+
+			// Add For Loop
+			for (int i = 1; i <= 10; i++) {
+				System.out.println("Fry drinks cup of coffee #" + i);
+			}
+		}
+	}
+
+	// ExpenseReport.java
+	import java.util.ArrayList;
+
+	class ExpenseReport {
+		public static void main(String[] args) {
+			ArrayList<Double> expenses = new ArrayList<Double>();
+			expenses.add(74.46);
+			expenses.add(63.99);
+			expenses.add(10.57);
+			expenses.add(81.37);
+
+			double total = 0;
+
+			// Iterate Over Expenses
+			for (int i = 0; i < expenses.size(); i++) {
+				double value = expenses.get(i);
+				total = total + value;
+			}
+
+			System.out.println("Total Expenses: " + total);
+
+			double mostExpensive = 0;
+
+			// Iterate Over Expenses - Add For-Each Loop
+			for (double expense : expenses) {
+				if (expense > mostExpensive) {
+					mostExpensive = expense;
+				}
+			}
+
+			System.out.println("Most Expensive: " + mostExpensive);
+		}
+	}
 
 // String Methods
 
