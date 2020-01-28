@@ -234,7 +234,7 @@
 // ArrayLists - List.java
 	import java.util.ArrayList;
 
-	class List {
+	public class List {
 		public static void main(String[] args) {
 			// Create ArrayList
 			ArrayList<String> taskList = new ArrayList<String>();
@@ -271,7 +271,7 @@
 	// LuckyFive.java
 	import java.util.Random;
 
-	class LuckyFive {
+	public class LuckyFive {
 		public static void main(String[] args) {
 			// Create Random Number Generator
 			Random randomGenerator = new Random();
@@ -288,7 +288,7 @@
 	}
 
 	// Coffee.java
-	class Coffee {
+	public class Coffee {
 		public static void main(String[] args) {
 			// Initialize cupsOfCoffee
 			int cupsOfCoffee = 1;
@@ -309,7 +309,7 @@
 	// ExpenseReport.java
 	import java.util.ArrayList;
 
-	class ExpenseReport {
+	public class ExpenseReport {
 		public static void main(String[] args) {
 			ArrayList<Double> expenses = new ArrayList<Double>();
 			expenses.add(74.46);
@@ -340,7 +340,31 @@
 		}
 	}
 
-// String Methods
+// String Methods - Names.java
+	public class Names {
+		public static void main(String[] args) {
+			String firstName = "Serena ";
+			String lastName = "Scalzi";
+
+			System.out.println("First Name Length: " + firstName.length());
+			
+			System.out.println("Full Name: " + firstName.concat(lastName));
+			
+			System.out.println("Space Index: " + firstName.indexOf(" "));
+			
+			System.out.println("First Name Initial: " + firstName.charAt(0));
+			
+			System.out.println("First Name SERENA: " + firstName.equalsIgnoreCase("SERENA "));
+			
+			System.out.println("Last Name Allen: " + lastName.equals("Allen"));
+			
+			System.out.println("Nickname: " + lastName.substring(0, 5));
+			
+			System.out.println("Last Name Lowercase: " + lastName.toLowerCase());
+			
+			System.out.println("Last Name Uppercase: " + lastName.toUpperCase());
+		}
+	}
 
 // Inheritance and Polymorphism
 
