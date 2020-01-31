@@ -2,170 +2,278 @@
 <html lang="en">
 	<head>	
 		<title>Introduction to JavaScript</title>	
-		<script src="../js/jquery.min.js"></script> <!-- jquery libraries -->
-		<script src="../js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
-		<script src="../js/bootstrap.min.js"></script> <!-- bootstrap libraries -->
-		<link href="../css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->	
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/handlebars-v3.0.3.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/date.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap_plain.css">
+		<link rel="stylesheet" href="../css/styles.css">
 	</head>
 	
 	<body>
-		<div id="container">
-			<div class="row">
-				<div class="col-md-2">
-					<div id="content_left">
-						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-							<li><a href="introduction.html">Introduction</a></li>
-							<li><a href="variables.html">Variables</a></li>
-							<li><a href="controlflow.html">Control Flow</a></li>
-							<li><a href="functions.html">Functions</a></li>
-							<li><a href="scope.html">Scope</a></li>
-							<li><a href="arrays.html">Arrays</a></li>
-							<li><a href="loops.html">Loops</a></li>
-							<li><a href="iterators.html">Iterators</a></li>
-							<li><a href="objects.html">Objects</a></li>
-							<li class="active"><a href="classes.html">Classes</a></li>
-							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
-							<li><a href="modules.html">Modules</a></li>
-							<li><a href="request1.html">Requests I</a></li>
-							<li><a href="request2.html">Requests II</a></li>
-							<li><a href="../index.html">&larr; Back to Courses</a></li>
-						</ul>
-					</div>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="../index.html">Codecademy Courses</a></h1>
 				</div>
-				<div class="col-md-10">
-					<div id="content_right">
-						<h1>Introduction to JavaScript</h1>
-						<h2>Classes</h2>
-						<h3>Review: Classes</h3>
-						<p>Way to go! Let's review what you learned.</p>
-						<ul>
-							<li>Classes are templates for objects.</li>
-							<li>Javascript calls a constructor method when we create a new instance of a class.</li>
-							<li>Inheritance is when we create a parent class with properties and methods that we can extend to child classes.</li>
-							<li>We use the extends keyword to create a subclass.</li>
-							<li>The super keyword calls the constructor() of a parent class.</li>
-							<li>Static methods are called on the class, but not on instances of the class.</li>
-						</ul>
-						<p>In completing this lesson, you've taken one step closer to writing efficient, production-level JavaScript. Good luck as you continue to develop your skills and move into intermediate-level concepts.</p>
-					</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Command Line&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../command-line-course/navigating.html">Navigating the File System</a></li>
+								<li><a href="../command-line-course/viewing.html">Viewing and Changing the File System</a></li>
+								<li><a href="../command-line-course/redirecting.html">Redirecting Input and Output</a></li>
+								<li><a href="../command-line-course/configuring.html">Configuring the Environment</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HTML&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../html-course/introduction.html">Introduction to HTML</a></li>
+								<li><a href="../html-course/standards.html">HTML Document Standards</a></li>
+								<li><a href="../html-course/tables.html">Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CSS&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../css-course/selectors.html">CSS Setup and Selectors</a></li>
+								<li><a href="../css-course/rules.html">CSS Visual Rules</a></li>
+								<li><a href="../css-course/model.html">The Box Model</a></li>
+								<li><a href="../css-course/changing.html">Changing the Box Model</a></li>
+								<li><a href="../css-course/display.html">CSS Display and Positioning</a></li>
+								<li><a href="../css-course/color.html">CSS Color</a></li>
+								<li><a href="../css-course/typography.html">CSS Typography</a></li>
+								<li><a href="../css-course/grid.html">CSS Grid Essentials</a></li>
+								<li><a href="../css-course/advanced.html">Advanced CSS Grid</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="introduction.html">Introduction</a></li>
+								<li><a href="variables.html">Variables</a></li>
+								<li><a href="controlflow.html">Control Flow</a></li>
+								<li><a href="functions.html">Functions</a></li>
+								<li><a href="scope.html">Scope</a></li>
+								<li><a href="arrays.html">Arrays</a></li>
+								<li><a href="loops.html">Loops</a></li>
+								<li><a href="iterators.html">Iterators</a></li>
+								<li><a href="objects.html">Objects</a></li>
+								<li class="active"><a href="classes.html">Classes</a></li>
+								<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+								<li><a href="modules.html">Modules</a></li>
+								<li><a href="request1.html">Requests I</a></li>
+								<li><a href="request2.html">Requests II</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHP&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../php-course/introduction.html">Introduction to PHP</a></li>
+								<li><a href="../php-course/strings.html">PHP Strings and Variables</a></li>
+								<li><a href="../php-course/numbers.html">PHP Numbers</a></li>
+								<li><a href="../php-course/functions.html">Introduction to PHP Functions</a></li>
+								<li><a href="../php-course/builtin.html">Intro to Built-in PHP Functions</a></li>
+								<li><a href="../php-course/ordered.html">Ordered Arrays</a></li>
+								<li><a href="../php-course/associative.html">Associative Arrays</a></li>
+								<li><a href="../php-course/html.html">PHP and HTML</a></li>
+								<li><a href="../php-course/form.html">HTML Form Handling in PHP</a></li>
+								<li><a href="../php-course/comparison.html">Booleans and Comparison Operators</a></li>
+								<li><a href="../php-course/conditions.html">Logical Operators and Compound Conditions</a></li>
+								<li><a href="../php-course/loops.html">Loops</a></li>
+								<li><a href="../php-course/loops2.html">Loops in HTML</a></li>
+								<li><a href="../php-course/validation.html">Introduction to Form Validation</a></li>
+								<li><a href="../php-course/regex.html">Introduction to Regular Expressions</a></li>
+								<li><a href="../php-course/validation2.html">Introduction to PHP Form Validation</a></li>
+								<li><a href="../php-course/classes.html">Classes and Objects</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SQL&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../sql-course/manipulation.html">Manipulation</a></li>
+								<li><a href="../sql-course/queries.html">Queries</a></li>
+								<li><a href="../sql-course/functions.html">Aggregate Functions</a></li>
+								<li><a href="../sql-course/tables.html">Multiple Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Java&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../java-course/hello.html">Hello World</a></li>
+								<li><a href="../java-course/variables.html">Variables</a></li>
+								<li><a href="../java-course/manipulating.html">Manipulating Variables</a></li>
+								<li><a href="../java-course/classes.html">Introduction to Classes</a></li>
+								<li><a href="../java-course/methods.html">Methods</a></li>
+								<li><a href="../java-course/conditionals.html">Conditionals and Control Flow</a></li>
+								<li><a href="../java-course/operators.html">Conditional Operators</a></li>
+								<li><a href="../java-course/arrays.html">Arrays</a></li>
+								<li><a href="../java-course/arraylists.html">ArrayLists</a></li>
+								<li><a href="../java-course/loops.html">Loops</a></li>
+								<li><a href="../java-course/string.html">String Methods</a></li>
+								<li><a href="../java-course/inheritance.html">Inheritance and Polymorphism</a></li>
+								<li><a href="../java-course/debugging.html">Debugging</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../resources.html#command-line-resources">Command Line</a></li>
+								<li><a href="../resources.html#html-resources">HTML</a></li>
+								<li><a href="../resources.html#css-resources">CSS</a></li>
+								<li><a href="../resources.html#javascript-resources">JavaScript</a></li>
+								<li><a href="../resources.html#php-resources">PHP</a></li>
+								<li><a href="../resources.html#sql-resources">SQL</a></li>
+								<li><a href="../resources.html#java-resources">Java</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-            </div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<ol class="breadcrumb">
+				<li>JavaScript</li>
+				<li>Classes</li>
+			</ol>
+			<h2>Classes</h2>
+			<h3>Review: Classes</h3>
+			<p>Way to go! Let's review what you learned.</p>
+			<ul>
+				<li>Classes are templates for objects.</li>
+				<li>Javascript calls a constructor method when we create a new instance of a class.</li>
+				<li>Inheritance is when we create a parent class with properties and methods that we can extend to child classes.</li>
+				<li>We use the extends keyword to create a subclass.</li>
+				<li>The super keyword calls the constructor() of a parent class.</li>
+				<li>Static methods are called on the class, but not on instances of the class.</li>
+			</ul>
+			<p>In completing this lesson, you've taken one step closer to writing efficient, production-level JavaScript. Good luck as you continue to develop your skills and move into intermediate-level concepts.</p>
 		</div>
 
+		<footer>
+			<div class="container">
+				<hr>
+				<div id="today"></div>
+			</div>
+		</footer>
+
 		<script type="text/javascript">	
-		// Classes - Tool used to quickly produce similar objects
-		// Constructor - Method called every time a new instance of a class is created
-		// Create Surgeon Class and Set Input Parameters to Properties with constructor Method
-		class Surgeon {
-			constructor (name, department) {
-				this.name = name;
-				this.department = department;
-			}
-		}
-		
-		// Instance - Object that contains class property names and methods with unique property values
-		// Create Instances of Surgeon Class and Save to Constant Variables
-		const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
-		
-		const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
-		
-		// Class method and getter syntax is the same as it is for objects except you can not include commas between methods.
-		// Write Surgeon Program
-		class Surgeon {
-			constructor(name, department) {
-				this._name = name;
-				this._department = department;
-				this._remainingVacationDays = 20;
+			// Classes - Tool used to quickly produce similar objects
+			// Constructor - Method called every time a new instance of a class is created
+			// Create Surgeon Class and Set Input Parameters to Properties with constructor Method
+			class Surgeon {
+				constructor (name, department) {
+					this.name = name;
+					this.department = department;
+				}
 			}
 			
-			get name() {
-				return this._name;
+			// Instance - Object that contains class property names and methods with unique property values
+			// Create Instances of Surgeon Class and Save to Constant Variables
+			const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+			
+			const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+			
+			// Class method and getter syntax is the same as it is for objects except you can not include commas between methods.
+			// Write Surgeon Program
+			class Surgeon {
+				constructor(name, department) {
+					this._name = name;
+					this._department = department;
+					this._remainingVacationDays = 20;
+				}
+				
+				get name() {
+					return this._name;
+				}
+				
+				get department() {
+					return this._department;
+				}
+				
+				get remainingVacationDays() {
+					return this._remainingVacationDays;
+				}
+				
+				takeVacationDays(daysOff) {
+					this._remainingVacationDays = this._remainingVacationDays - daysOff;
+					return this._remainingVacationDays;
+				}
 			}
 			
-			get department() {
-				return this._department;
+			// Log name Property of surgeonCurry Object to Console
+			console.log(surgeonCurry.name);
+			
+			// Call takeVacationDays Method with Input 3
+			surgeonCurry.takeVacationDays(3);
+			
+			// Log remainingVacationDays Property to Console
+			console.log(surgeonCurry.remainingVacationDays);
+			
+			/* With inheritance, you can create a parent class (also known as a superclass) with properties and methods that multiple child classes  (also known as subclasses) share. The child classes inherit the properties and methods from their parent class. */
+			/* In a constructor(), you must always call the super method before you can use the this keyword — if you do not, JavaScript will throw a reference error. To avoid reference errors, it is best practice to call super on the first line of subclass constructors. */
+			// Static - Methods called directly from classes but not from instances of classes
+			// Write HospitalEmployee Program
+			class HospitalEmployee {
+				constructor(name) {
+					this._name = name;
+					this._remainingVacationDays = 20;
+				}
+				
+				get name() {
+					return this._name;
+				}
+				
+				get remainingVacationDays() {
+					return this._remainingVacationDays;
+				}
+				
+				takeVacationDays(daysOff) {
+					this._remainingVacationDays -= daysOff;
+				}
+				
+				static generatePassword() {
+					const randomNumber = Math.floor(Math.random() * 10000);
+					return randomNumber;
+				}
 			}
 			
-			get remainingVacationDays() {
-				return this._remainingVacationDays;
+			class Nurse extends HospitalEmployee {
+				constructor(name, certifications) {
+					super(name);
+					this._certifications = certifications;
+				}
+				
+				get certifications() {
+					return this._certifications;
+				}
+				
+				addCertification(newCertification) {
+					this.certifications.push(newCertification);
+				}
 			}
 			
-			takeVacationDays(daysOff) {
-				this._remainingVacationDays = this._remainingVacationDays - daysOff;
-				return this._remainingVacationDays;
-			}
-		}
-		
-		// Log name Property of surgeonCurry Object to Console
-		console.log(surgeonCurry.name);
-		
-		// Call takeVacationDays Method with Input 3
-		surgeonCurry.takeVacationDays(3);
-		
-		// Log remainingVacationDays Property to Console
-		console.log(surgeonCurry.remainingVacationDays);
-		
-		/* With inheritance, you can create a parent class (also known as a superclass) with properties and methods that multiple child classes  (also known as subclasses) share. The child classes inherit the properties and methods from their parent class. */
-		/* In a constructor(), you must always call the super method before you can use the this keyword — if you do not, JavaScript will throw a reference error. To avoid reference errors, it is best practice to call super on the first line of subclass constructors. */
-		// Static - Methods called directly from classes but not from instances of classes
-		// Write HospitalEmployee Program
-		class HospitalEmployee {
-			constructor(name) {
-				this._name = name;
-				this._remainingVacationDays = 20;
+			class Doctor extends HospitalEmployee {
+				constructor(name, insurance) {
+					super(name);
+					this._insurance = insurance;
+				}
 			}
 			
-			get name() {
-				return this._name;
-			}
-			
-			get remainingVacationDays() {
-				return this._remainingVacationDays;
-			}
-			
-			takeVacationDays(daysOff) {
-				this._remainingVacationDays -= daysOff;
-			}
-			
-			static generatePassword() {
-				const randomNumber = Math.floor(Math.random() * 10000);
-				return randomNumber;
-			}
-		}
-		
-		class Nurse extends HospitalEmployee {
-			constructor(name, certifications) {
-				super(name);
-				this._certifications = certifications;
-			}
-			
-			get certifications() {
-				return this._certifications;
-			}
-			
-			addCertification(newCertification) {
-				this.certifications.push(newCertification);
-			}
-		}
-		
-		class Doctor extends HospitalEmployee {
-			constructor(name, insurance) {
-				super(name);
-				this._insurance = insurance;
-			}
-		}
-		
-		const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);
-		nurseOlynyk.takeVacationDays(5);
-		console.log(nurseOlynyk.remainingVacationDays);
-		nurseOlynyk.addCertification('Genetics');
-		console.log(nurseOlynyk.certifications);
-		</script>	
+			const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);
+			nurseOlynyk.takeVacationDays(5);
+			console.log(nurseOlynyk.remainingVacationDays);
+			nurseOlynyk.addCertification('Genetics');
+			console.log(nurseOlynyk.certifications);
+		</script>
 	</body>	
 </html>

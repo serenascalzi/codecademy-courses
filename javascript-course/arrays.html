@@ -2,120 +2,228 @@
 <html lang="en">
 	<head>	
 		<title>Introduction to JavaScript</title>	
-		<script src="../js/jquery.min.js"></script> <!-- jquery libraries -->
-		<script src="../js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
-		<script src="../js/bootstrap.min.js"></script> <!-- bootstrap libraries -->
-		<link href="../css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->	
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/handlebars-v3.0.3.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/date.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap_plain.css">
+		<link rel="stylesheet" href="../css/styles.css">
 	</head>
 	
 	<body>
-		<div id="container">
-			<div class="row">
-				<div class="col-md-2">
-					<div id="content_left">
-						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-							<li><a href="introduction.html">Introduction</a></li>
-							<li><a href="variables.html">Variables</a></li>
-							<li><a href="controlflow.html">Control Flow</a></li>
-							<li><a href="functions.html">Functions</a></li>
-							<li><a href="scope.html">Scope</a></li>
-							<li class="active"><a href="arrays.html">Arrays</a></li>
-							<li><a href="loops.html">Loops</a></li>
-							<li><a href="iterators.html">Iterators</a></li>
-							<li><a href="objects.html">Objects</a></li>
-							<li><a href="classes.html">Classes</a></li>
-							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
-							<li><a href="modules.html">Modules</a></li>
-							<li><a href="request1.html">Requests I</a></li>
-							<li><a href="request2.html">Requests II</a></li>
-							<li><a href="../index.html">&larr; Back to Courses</a></li>
-						</ul>
-					</div>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="../index.html">Codecademy Courses</a></h1>
 				</div>
-				<div class="col-md-10">
-					<div id="content_right">
-						<h1>Introduction to JavaScript</h1>
-						<h2>Arrays</h2>
-						<h3>Review Arrays</h3>
-						<p>Nice work! In this lesson, we learned these concepts regarding arrays:</p>
-						<ul>
-							<li>Arrays are lists and are a way to store data in JavaScript.</li>
-							<li>Arrays are created with brackets [].</li>
-							<li>Each item inside of an array is at a numbered position, starting at 0.</li>
-							<li>We can access one item in an array using its numbered position, with syntax like: myArray[0].</li>
-							<li>We can also change an item in an array using its numbered position, with syntax like myArray[0] = "new string";</li>
-							<li>Arrays have a length property, which allows you to see how many items are in an array.</li>
-							<li>Arrays have their own methods, including .push() and .pop(), which add and remove items from an array, respectively.</li>
-							<li>Arrays have many other methods that perform different functions, such as .slice() and .shift(). You can read the documentation for any array method on the Mozilla Developer Network website.</li>
-							<li>Variables that contain arrays can be declared with let or const. Even when declared with const, arrays are still mutable; they can be changed. However, a variable declared with const cannot be reassigned.</li>
-						</ul>
-					</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Command Line&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../command-line-course/navigating.html">Navigating the File System</a></li>
+								<li><a href="../command-line-course/viewing.html">Viewing and Changing the File System</a></li>
+								<li><a href="../command-line-course/redirecting.html">Redirecting Input and Output</a></li>
+								<li><a href="../command-line-course/configuring.html">Configuring the Environment</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HTML&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../html-course/introduction.html">Introduction to HTML</a></li>
+								<li><a href="../html-course/standards.html">HTML Document Standards</a></li>
+								<li><a href="../html-course/tables.html">Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CSS&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../css-course/selectors.html">CSS Setup and Selectors</a></li>
+								<li><a href="../css-course/rules.html">CSS Visual Rules</a></li>
+								<li><a href="../css-course/model.html">The Box Model</a></li>
+								<li><a href="../css-course/changing.html">Changing the Box Model</a></li>
+								<li><a href="../css-course/display.html">CSS Display and Positioning</a></li>
+								<li><a href="../css-course/color.html">CSS Color</a></li>
+								<li><a href="../css-course/typography.html">CSS Typography</a></li>
+								<li><a href="../css-course/grid.html">CSS Grid Essentials</a></li>
+								<li><a href="../css-course/advanced.html">Advanced CSS Grid</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="introduction.html">Introduction</a></li>
+								<li><a href="variables.html">Variables</a></li>
+								<li><a href="controlflow.html">Control Flow</a></li>
+								<li><a href="functions.html">Functions</a></li>
+								<li><a href="scope.html">Scope</a></li>
+								<li class="active"><a href="arrays.html">Arrays</a></li>
+								<li><a href="loops.html">Loops</a></li>
+								<li><a href="iterators.html">Iterators</a></li>
+								<li><a href="objects.html">Objects</a></li>
+								<li><a href="classes.html">Classes</a></li>
+								<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+								<li><a href="modules.html">Modules</a></li>
+								<li><a href="request1.html">Requests I</a></li>
+								<li><a href="request2.html">Requests II</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHP&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../php-course/introduction.html">Introduction to PHP</a></li>
+								<li><a href="../php-course/strings.html">PHP Strings and Variables</a></li>
+								<li><a href="../php-course/numbers.html">PHP Numbers</a></li>
+								<li><a href="../php-course/functions.html">Introduction to PHP Functions</a></li>
+								<li><a href="../php-course/builtin.html">Intro to Built-in PHP Functions</a></li>
+								<li><a href="../php-course/ordered.html">Ordered Arrays</a></li>
+								<li><a href="../php-course/associative.html">Associative Arrays</a></li>
+								<li><a href="../php-course/html.html">PHP and HTML</a></li>
+								<li><a href="../php-course/form.html">HTML Form Handling in PHP</a></li>
+								<li><a href="../php-course/comparison.html">Booleans and Comparison Operators</a></li>
+								<li><a href="../php-course/conditions.html">Logical Operators and Compound Conditions</a></li>
+								<li><a href="../php-course/loops.html">Loops</a></li>
+								<li><a href="../php-course/loops2.html">Loops in HTML</a></li>
+								<li><a href="../php-course/validation.html">Introduction to Form Validation</a></li>
+								<li><a href="../php-course/regex.html">Introduction to Regular Expressions</a></li>
+								<li><a href="../php-course/validation2.html">Introduction to PHP Form Validation</a></li>
+								<li><a href="../php-course/classes.html">Classes and Objects</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SQL&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../sql-course/manipulation.html">Manipulation</a></li>
+								<li><a href="../sql-course/queries.html">Queries</a></li>
+								<li><a href="../sql-course/functions.html">Aggregate Functions</a></li>
+								<li><a href="../sql-course/tables.html">Multiple Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Java&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../java-course/hello.html">Hello World</a></li>
+								<li><a href="../java-course/variables.html">Variables</a></li>
+								<li><a href="../java-course/manipulating.html">Manipulating Variables</a></li>
+								<li><a href="../java-course/classes.html">Introduction to Classes</a></li>
+								<li><a href="../java-course/methods.html">Methods</a></li>
+								<li><a href="../java-course/conditionals.html">Conditionals and Control Flow</a></li>
+								<li><a href="../java-course/operators.html">Conditional Operators</a></li>
+								<li><a href="../java-course/arrays.html">Arrays</a></li>
+								<li><a href="../java-course/arraylists.html">ArrayLists</a></li>
+								<li><a href="../java-course/loops.html">Loops</a></li>
+								<li><a href="../java-course/string.html">String Methods</a></li>
+								<li><a href="../java-course/inheritance.html">Inheritance and Polymorphism</a></li>
+								<li><a href="../java-course/debugging.html">Debugging</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../resources.html#command-line-resources">Command Line</a></li>
+								<li><a href="../resources.html#html-resources">HTML</a></li>
+								<li><a href="../resources.html#css-resources">CSS</a></li>
+								<li><a href="../resources.html#javascript-resources">JavaScript</a></li>
+								<li><a href="../resources.html#php-resources">PHP</a></li>
+								<li><a href="../resources.html#sql-resources">SQL</a></li>
+								<li><a href="../resources.html#java-resources">Java</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-            </div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<ol class="breadcrumb">
+				<li>JavaScript</li>
+				<li>Arrays</li>
+			</ol>
+			<h2>Arrays</h2>
+			<h3>Review Arrays</h3>
+			<p>Nice work! In this lesson, we learned these concepts regarding arrays:</p>
+			<ul>
+				<li>Arrays are lists and are a way to store data in JavaScript.</li>
+				<li>Arrays are created with brackets [].</li>
+				<li>Each item inside of an array is at a numbered position, starting at 0.</li>
+				<li>We can access one item in an array using its numbered position, with syntax like: myArray[0].</li>
+				<li>We can also change an item in an array using its numbered position, with syntax like myArray[0] = "new string";</li>
+				<li>Arrays have a length property, which allows you to see how many items are in an array.</li>
+				<li>Arrays have their own methods, including .push() and .pop(), which add and remove items from an array, respectively.</li>
+				<li>Arrays have many other methods that perform different functions, such as .slice() and .shift(). You can read the documentation for any array method on the Mozilla Developer Network website.</li>
+				<li>Variables that contain arrays can be declared with let or const. Even when declared with const, arrays are still mutable; they can be changed. However, a variable declared with const cannot be reassigned.</li>
+			</ul>
 		</div>
 
-		<script type="text/javascript">	
-		// Arrays - Ordered lists that store any data types, each item has a numbered position - for access
-		// Create newYearsResolutions Array and Log to Console
-		let newYearsResolutions = ['WordPress','JavaScript','PunchCode'];
-		
-		console.log(newYearsResolutions);
-		
-		// Zero-indexed - First item in array/string is at position 0
-		// Create listItem Variable and Log Items from Array to Console
-		let newYearsResolutions = ['WordPress','JavaScript','PunchCode'];
-		
-		console.log(newYearsResolutions);
-		
-		let listItem = newYearsResolutions[0];
-		
-		console.log(listItem);
-		console.log(newYearsResolutions[2]);
-		
-		// Change Second Array Element with Index
-		newYearsResolutions[1] = 'Learn a new language';
-		
-		// Log Array Length to Console with Length Property
-		console.log(newYearsResolutions.length);
-		
-		// Push Method - Function that adds items to the end of an array
-		// Pop Method - Function that removes the last item of an array
-		// Add Items to End of Array with Push Method and Log to Console
-		newYearsResolutions.push('Hand Lettering', 'Photography');		
-		console.log(newYearsResolutions);
-		
-		// Remove Last Item from Array with Pop Method and Log to Console
-		newYearsResolutions.pop();		
-		console.log(newYearsResolutions);
-		
-		// Array Methods @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-		// Some array methods don't modify arrays
-		// Frequently used methods include .join(), .slice(), .splice(), .shift(), .unshift(), .concat()
-		// Remove First Item from groceryList Array with Shift Method and Log to Console
-		groceryList.shift();
-		console.log(groceryList);
-		
-		// Add Item to Beginning of Array with Unshift Method and Log to Console
-		groceryList.unshift('popcorn');
-		console.log(groceryList);
-		
-		// Copy Items from Middle of Array with Slice Method and Log to Console
-		console.log(groceryList.slice(1, 4)); // console.log(array.method(first, last+1));
-		
-		// Arrays that are declared with const remain mutable, contents can be changed, variable name cannot be reassigned
-		// Reassign Array and Log to Console
-		let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
-		
-		const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
-		
-		condiments = ['Special Sauce'];
-		console.log(condiments);		
-		</script>	
+		<footer>
+			<div class="container">
+				<hr>
+				<div id="today"></div>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			// Arrays - Ordered lists that store any data types, each item has a numbered position - for access
+			// Create newYearsResolutions Array and Log to Console
+			let newYearsResolutions = ['WordPress','JavaScript','PunchCode'];
+			
+			console.log(newYearsResolutions);
+			
+			// Zero-indexed - First item in array/string is at position 0
+			// Create listItem Variable and Log Items from Array to Console
+			let newYearsResolutions = ['WordPress','JavaScript','PunchCode'];
+			
+			console.log(newYearsResolutions);
+			
+			let listItem = newYearsResolutions[0];
+			
+			console.log(listItem);
+			console.log(newYearsResolutions[2]);
+			
+			// Change Second Array Element with Index
+			newYearsResolutions[1] = 'Learn a new language';
+			
+			// Log Array Length to Console with Length Property
+			console.log(newYearsResolutions.length);
+			
+			// Push Method - Function that adds items to the end of an array
+			// Pop Method - Function that removes the last item of an array
+			// Add Items to End of Array with Push Method and Log to Console
+			newYearsResolutions.push('Hand Lettering', 'Photography');		
+			console.log(newYearsResolutions);
+			
+			// Remove Last Item from Array with Pop Method and Log to Console
+			newYearsResolutions.pop();		
+			console.log(newYearsResolutions);
+			
+			// Array Methods @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+			// Some array methods don't modify arrays
+			// Frequently used methods include .join(), .slice(), .splice(), .shift(), .unshift(), .concat()
+			// Remove First Item from groceryList Array with Shift Method and Log to Console
+			groceryList.shift();
+			console.log(groceryList);
+			
+			// Add Item to Beginning of Array with Unshift Method and Log to Console
+			groceryList.unshift('popcorn');
+			console.log(groceryList);
+			
+			// Copy Items from Middle of Array with Slice Method and Log to Console
+			console.log(groceryList.slice(1, 4)); // console.log(array.method(first, last+1));
+			
+			// Arrays that are declared with const remain mutable, contents can be changed, variable name cannot be reassigned
+			// Reassign Array and Log to Console
+			let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+			
+			const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+			
+			condiments = ['Special Sauce'];
+			console.log(condiments);		
+		</script>
 	</body>	
 </html>
