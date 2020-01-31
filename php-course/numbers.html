@@ -2,166 +2,271 @@
 <html lang="en">
 	<head>	
 		<title>Learn PHP</title>	
-		<script src="../js/jquery.min.js"></script> <!-- jquery libraries -->
-		<script src="../js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
-		<script src="../js/bootstrap.min.js"></script> <!-- bootstrap libraries -->
-		<link href="../css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->	
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/handlebars-v3.0.3.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/date.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap_plain.css">
+		<link rel="stylesheet" href="../css/styles.css">
 	</head>
 	
 	<body>
-		<div id="container">
-			<div class="row">
-				<div class="col-md-2">
-					<div id="content_left">
-						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-							<li><a href="introduction.html">Introduction to PHP</a></li>
-							<li><a href="strings.html">PHP Strings and Variables</a></li>
-							<li class="active"><a href="numbers.html">PHP Numbers</a></li>
-							<li><a href="functions.html">Introduction to PHP Functions</a></li>
-							<li><a href="builtin.html">Intro to Built-in PHP Functions</a></li>
-							<li><a href="ordered.html">Ordered Arrays</a></li>
-							<li><a href="associative.html">Associative Arrays</a></li>
-							<li><a href="html.html">PHP and HTML</a></li>
-							<li><a href="form.html">HTML Form Handling in PHP</a></li>
-							<li><a href="comparison.html">Booleans and Comparison Operators</a></li>
-							<li><a href="conditions.html">Logical Operators and Compound Conditions</a></li>
-							<li><a href="loops.html">Loops</a></li>
-							<li><a href="loops2.html">Loops in HTML</a></li>
-							<li><a href="validation.html">Introduction to Form Validation</a></li>
-							<li><a href="regex.html">Introduction to Regular Expressions</a></li>
-							<li><a href="validation2.html">Introduction to PHP Form Validation</a></li>
-							<li><a href="classes.html">Classes and Objects</a></li>
-							<li><a href="../index.html">&larr; Back to Courses</a></li>
-						</ul>
-					</div>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="../index.html">Codecademy Courses</a></h1>
 				</div>
-				<div class="col-md-10">
-					<div id="content_right">
-						<h1>Learn PHP</h1>
-						<h2>PHP Numbers</h2>
-						<h3>Review</h3>
-						<p>Great job! In this lesson, we learned all about using numbers in PHP. Let’s review what we covered:</p>
-						<ul>
-							<li>PHP has two number data types: integers and floating point numbers</li>
-							<li>We can use arithmetic operators for performing math operations:</li>
-						</ul>
-						<table>
-							<thead>
-								<tr>
-									<th>Operation:</th>
-									<th>&nbsp;</th>
-									<th>&nbsp;</th>
-									<th>&nbsp;</th>
-									<th>Example:</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Addition</td>
-									<th>&nbsp;</th>
-									<td>+</td>
-									<th>&nbsp;</th>
-									<td>echo 1 + 4.5; // Prints: 5.5</td>
-								</tr>
-								<tr>
-									<td>Subtraction</td>
-									<th>&nbsp;</th>
-									<td>-</td>
-									<th>&nbsp;</th>
-									<td>echo 9 - 1; // Prints: 8</td>
-								</tr>
-								<tr>
-									<td>Multiplication</td>
-									<th>&nbsp;</th>
-									<td>*</td>
-									<th>&nbsp;</th>
-									<td>echo -1.9 * 2.9; // Prints: -5.51</td>
-								</tr>
-								<tr>
-									<td>Division</td>
-									<th>&nbsp;</th>
-									<td>/</td>
-									<th>&nbsp;</th>
-									<td>echo 9 / 1; // Prints: 9</td>
-								</tr>
-								<tr>
-									<td>Modulo</td>
-									<th>&nbsp;</th>
-									<td>%</td>
-									<th>&nbsp;</th>
-									<td>echo 11 % 3; // Prints: 2</td>
-								</tr>
-								<tr>
-									<td>Exponentiation</td>
-									<th>&nbsp;</th>
-									<td>**</td>
-									<th>&nbsp;</th>
-									<td>echo 8 ** 2; // Prints: 64</td>
-								</tr>
-							</tbody>
-						</table>
-						<ul>
-							<li>Operations have an order of precedence meaning that certain types of operations in a chain will be evaluated before others: first evaluated will be any operation wrapped in <strong>p</strong>arenthesis (()), next <strong>e</strong>xponents (**), then <strong>m</strong>ultiplication (*) and <strong>d</strong>ivision (/), and finally <strong>a</strong>ddition (+) and <strong>s</strong>ubtraction (-). The acronym PEMDAS can be a helpful way of remembering the order.</li>
-							<li>We can assign number values to variables and then perform numerical operations with them.</li>
-							<li>We can use mathematical assignment operators as a shorthand when reassigning number variables:</li>
-						</ul>
-						<table>
-							<thead>
-								<tr>
-									<th>Operation:</th>
-									<th>&nbsp;</th>
-									<th>Long Syntax:</th>
-									<th>&nbsp;</th>
-									<th>Short Syntax:</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Add</td>
-									<th>&nbsp;</th>
-									<td>$x = $x + $y</td>
-									<th>&nbsp;</th>
-									<td>$x += $y</td>
-								</tr>
-								<tr>
-									<td>Subtract</td>
-									<th>&nbsp;</th>
-									<td>$x = $x - $y</td>
-									<th>&nbsp;</th>
-									<td>$x -= $y</td>
-								</tr>
-								<tr>
-									<td>Multiply</td>
-									<th>&nbsp;</th>
-									<td>$x = $x * $y</td>
-									<th>&nbsp;</th>
-									<td>$x *= $y</td>
-								</tr>
-								<tr>
-									<td>Divide</td>
-									<th>&nbsp;</th>
-									<td>$x = $x / $y</td>
-									<th>&nbsp;</th>
-									<td>$x /= $y</td>
-								</tr>
-								<tr>
-									<td>Mod</td>
-									<th>&nbsp;</th>
-									<td>$x = $x % $y</td>
-									<th>&nbsp;</th>
-									<td>$x %= $y</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Command Line&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../command-line-course/navigating.html">Navigating the File System</a></li>
+								<li><a href="../command-line-course/viewing.html">Viewing and Changing the File System</a></li>
+								<li><a href="../command-line-course/redirecting.html">Redirecting Input and Output</a></li>
+								<li><a href="../command-line-course/configuring.html">Configuring the Environment</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HTML&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../html-course/introduction.html">Introduction to HTML</a></li>
+								<li><a href="../html-course/standards.html">HTML Document Standards</a></li>
+								<li><a href="../html-course/tables.html">Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CSS&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../css-course/selectors.html">CSS Setup and Selectors</a></li>
+								<li><a href="../css-course/rules.html">CSS Visual Rules</a></li>
+								<li><a href="../css-course/model.html">The Box Model</a></li>
+								<li><a href="../css-course/changing.html">Changing the Box Model</a></li>
+								<li><a href="../css-course/display.html">CSS Display and Positioning</a></li>
+								<li><a href="../css-course/color.html">CSS Color</a></li>
+								<li><a href="../css-course/typography.html">CSS Typography</a></li>
+								<li><a href="../css-course/grid.html">CSS Grid Essentials</a></li>
+								<li><a href="../css-course/advanced.html">Advanced CSS Grid</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../javascript-course/introduction.html">Introduction</a></li>
+								<li><a href="../javascript-course/variables.html">Variables</a></li>
+								<li><a href="../javascript-course/controlflow.html">Control Flow</a></li>
+								<li><a href="../javascript-course/functions.html">Functions</a></li>
+								<li><a href="../javascript-course/scope.html">Scope</a></li>
+								<li><a href="../javascript-course/arrays.html">Arrays</a></li>
+								<li><a href="../javascript-course/loops.html">Loops</a></li>
+								<li><a href="../javascript-course/iterators.html">Iterators</a></li>
+								<li><a href="../javascript-course/objects.html">Objects</a></li>
+								<li><a href="../javascript-course/classes.html">Classes</a></li>
+								<li><a href="../javascript-course/browser.html">Browser Compatibility and Transpilation</a></li>
+								<li><a href="../javascript-course/modules.html">Modules</a></li>
+								<li><a href="../javascript-course/request1.html">Requests I</a></li>
+								<li><a href="../javascript-course/request2.html">Requests II</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHP&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="introduction.html">Introduction to PHP</a></li>
+								<li><a href="strings.html">PHP Strings and Variables</a></li>
+								<li class="active"><a href="numbers.html">PHP Numbers</a></li>
+								<li><a href="functions.html">Introduction to PHP Functions</a></li>
+								<li><a href="builtin.html">Intro to Built-in PHP Functions</a></li>
+								<li><a href="ordered.html">Ordered Arrays</a></li>
+								<li><a href="associative.html">Associative Arrays</a></li>
+								<li><a href="html.html">PHP and HTML</a></li>
+								<li><a href="form.html">HTML Form Handling in PHP</a></li>
+								<li><a href="comparison.html">Booleans and Comparison Operators</a></li>
+								<li><a href="conditions.html">Logical Operators and Compound Conditions</a></li>
+								<li><a href="loops.html">Loops</a></li>
+								<li><a href="loops2.html">Loops in HTML</a></li>
+								<li><a href="validation.html">Introduction to Form Validation</a></li>
+								<li><a href="regex.html">Introduction to Regular Expressions</a></li>
+								<li><a href="validation2.html">Introduction to PHP Form Validation</a></li>
+								<li><a href="classes.html">Classes and Objects</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SQL&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../sql-course/manipulation.html">Manipulation</a></li>
+								<li><a href="../sql-course/queries.html">Queries</a></li>
+								<li><a href="../sql-course/functions.html">Aggregate Functions</a></li>
+								<li><a href="../sql-course/tables.html">Multiple Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Java&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../java-course/hello.html">Hello World</a></li>
+								<li><a href="../java-course/variables.html">Variables</a></li>
+								<li><a href="../java-course/manipulating.html">Manipulating Variables</a></li>
+								<li><a href="../java-course/classes.html">Introduction to Classes</a></li>
+								<li><a href="../java-course/methods.html">Methods</a></li>
+								<li><a href="../java-course/conditionals.html">Conditionals and Control Flow</a></li>
+								<li><a href="../java-course/operators.html">Conditional Operators</a></li>
+								<li><a href="../java-course/arrays.html">Arrays</a></li>
+								<li><a href="../java-course/arraylists.html">ArrayLists</a></li>
+								<li><a href="../java-course/loops.html">Loops</a></li>
+								<li><a href="../java-course/string.html">String Methods</a></li>
+								<li><a href="../java-course/inheritance.html">Inheritance and Polymorphism</a></li>
+								<li><a href="../java-course/debugging.html">Debugging</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../resources.html#command-line-resources">Command Line</a></li>
+								<li><a href="../resources.html#html-resources">HTML</a></li>
+								<li><a href="../resources.html#css-resources">CSS</a></li>
+								<li><a href="../resources.html#javascript-resources">JavaScript</a></li>
+								<li><a href="../resources.html#php-resources">PHP</a></li>
+								<li><a href="../resources.html#sql-resources">SQL</a></li>
+								<li><a href="../resources.html#java-resources">Java</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-            </div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<ol class="breadcrumb">
+				<li>PHP</li>
+				<li>PHP Numbers</li>
+			</ol>
+			<h2>PHP Numbers</h2>
+			<h3>Review</h3>
+			<p>Great job! In this lesson, we learned all about using numbers in PHP. Let’s review what we covered:</p>
+			<ul>
+				<li>PHP has two number data types: integers and floating point numbers</li>
+				<li>We can use arithmetic operators for performing math operations:</li>
+			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>Operation:</th>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th>Example:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Addition</td>
+						<th>&nbsp;</th>
+						<td>+</td>
+						<th>&nbsp;</th>
+						<td>echo 1 + 4.5; // Prints: 5.5</td>
+					</tr>
+					<tr>
+						<td>Subtraction</td>
+						<th>&nbsp;</th>
+						<td>-</td>
+						<th>&nbsp;</th>
+						<td>echo 9 - 1; // Prints: 8</td>
+					</tr>
+					<tr>
+						<td>Multiplication</td>
+						<th>&nbsp;</th>
+						<td>*</td>
+						<th>&nbsp;</th>
+						<td>echo -1.9 * 2.9; // Prints: -5.51</td>
+					</tr>
+					<tr>
+						<td>Division</td>
+						<th>&nbsp;</th>
+						<td>/</td>
+						<th>&nbsp;</th>
+						<td>echo 9 / 1; // Prints: 9</td>
+					</tr>
+					<tr>
+						<td>Modulo</td>
+						<th>&nbsp;</th>
+						<td>%</td>
+						<th>&nbsp;</th>
+						<td>echo 11 % 3; // Prints: 2</td>
+					</tr>
+					<tr>
+						<td>Exponentiation</td>
+						<th>&nbsp;</th>
+						<td>**</td>
+						<th>&nbsp;</th>
+						<td>echo 8 ** 2; // Prints: 64</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<li>Operations have an order of precedence meaning that certain types of operations in a chain will be evaluated before others: first evaluated will be any operation wrapped in <strong>p</strong>arenthesis (()), next <strong>e</strong>xponents (**), then <strong>m</strong>ultiplication (*) and <strong>d</strong>ivision (/), and finally <strong>a</strong>ddition (+) and <strong>s</strong>ubtraction (-). The acronym PEMDAS can be a helpful way of remembering the order.</li>
+				<li>We can assign number values to variables and then perform numerical operations with them.</li>
+				<li>We can use mathematical assignment operators as a shorthand when reassigning number variables:</li>
+			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>Operation:</th>
+						<th>&nbsp;</th>
+						<th>Long Syntax:</th>
+						<th>&nbsp;</th>
+						<th>Short Syntax:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Add</td>
+						<th>&nbsp;</th>
+						<td>$x = $x + $y</td>
+						<th>&nbsp;</th>
+						<td>$x += $y</td>
+					</tr>
+					<tr>
+						<td>Subtract</td>
+						<th>&nbsp;</th>
+						<td>$x = $x - $y</td>
+						<th>&nbsp;</th>
+						<td>$x -= $y</td>
+					</tr>
+					<tr>
+						<td>Multiply</td>
+						<th>&nbsp;</th>
+						<td>$x = $x * $y</td>
+						<th>&nbsp;</th>
+						<td>$x *= $y</td>
+					</tr>
+					<tr>
+						<td>Divide</td>
+						<th>&nbsp;</th>
+						<td>$x = $x / $y</td>
+						<th>&nbsp;</th>
+						<td>$x /= $y</td>
+					</tr>
+					<tr>
+						<td>Mod</td>
+						<th>&nbsp;</th>
+						<td>$x = $x % $y</td>
+						<th>&nbsp;</th>
+						<td>$x %= $y</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
+
+		<footer>
+			<div class="container">
+				<hr>
+				<div id="today"></div>
+			</div>
+		</footer>
 	</body>	
 </html>
