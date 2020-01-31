@@ -2,231 +2,339 @@
 <html lang="en">
 	<head>	
 		<title>Introduction to JavaScript</title>	
-		<script src="../js/jquery.min.js"></script> <!-- jquery libraries -->
-		<script src="../js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
-		<script src="../js/bootstrap.min.js"></script> <!-- bootstrap libraries -->
-		<link href="../css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->	
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/handlebars-v3.0.3.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/date.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap_plain.css">
+		<link rel="stylesheet" href="../css/styles.css">
 	</head>
 	
 	<body>
-		<div id="container">
-			<div class="row">
-				<div class="col-md-2">
-					<div id="content_left">
-						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-							<li><a href="introduction.html">Introduction</a></li>
-							<li><a href="variables.html">Variables</a></li>
-							<li><a href="controlflow.html">Control Flow</a></li>
-							<li><a href="functions.html">Functions</a></li>
-							<li><a href="scope.html">Scope</a></li>
-							<li><a href="arrays.html">Arrays</a></li>
-							<li><a href="loops.html">Loops</a></li>
-							<li><a href="iterators.html">Iterators</a></li>
-							<li><a href="objects.html">Objects</a></li>
-							<li><a href="classes.html">Classes</a></li>
-							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
-							<li class="active"><a href="modules.html">Modules</a></li>
-							<li><a href="request1.html">Requests I</a></li>
-							<li><a href="request2.html">Requests II</a></li>
-							<li><a href="../index.html">&larr; Back to Courses</a></li>
-						</ul>
-					</div>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="../index.html">Codecademy Courses</a></h1>
 				</div>
-				<div class="col-md-10">
-					<div id="content_right">
-						<h1>Introduction to JavaScript</h1>
-						<h2>Intermediate JavaScript Modules</h2>
-						<h3>Review</h3>
-						<p>We just learned how to use JavaScript modules. Let's review what we learned:</p>
-						<p>Modules in JavaScript are reusable pieces of code that can be exported from one program and imported for use in another program.</p>
-						<ul>
-							<li>module.exports_exports the module for use in another program.</li>
-							<li>require() imports the module for use in the current program.</li>
-						</ul>
-						<p>ES6 introduced a more flexible, easier syntax to export modules:</p>
-						<ul>
-							<li>default exports use export default to export JavaScript objects, functions, and primitive data types.</li>
-							<li>named exports use the export keyword to export data in variables.</li>
-							<li>named exports can be aliased with the as keyword.</li>
-							<li>import is a keyword that imports any object, function, or data type.</li>
-						</ul>
-					</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Command Line&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../command-line-course/navigating.html">Navigating the File System</a></li>
+								<li><a href="../command-line-course/viewing.html">Viewing and Changing the File System</a></li>
+								<li><a href="../command-line-course/redirecting.html">Redirecting Input and Output</a></li>
+								<li><a href="../command-line-course/configuring.html">Configuring the Environment</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HTML&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../html-course/introduction.html">Introduction to HTML</a></li>
+								<li><a href="../html-course/standards.html">HTML Document Standards</a></li>
+								<li><a href="../html-course/tables.html">Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CSS&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../css-course/selectors.html">CSS Setup and Selectors</a></li>
+								<li><a href="../css-course/rules.html">CSS Visual Rules</a></li>
+								<li><a href="../css-course/model.html">The Box Model</a></li>
+								<li><a href="../css-course/changing.html">Changing the Box Model</a></li>
+								<li><a href="../css-course/display.html">CSS Display and Positioning</a></li>
+								<li><a href="../css-course/color.html">CSS Color</a></li>
+								<li><a href="../css-course/typography.html">CSS Typography</a></li>
+								<li><a href="../css-course/grid.html">CSS Grid Essentials</a></li>
+								<li><a href="../css-course/advanced.html">Advanced CSS Grid</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="introduction.html">Introduction</a></li>
+								<li><a href="variables.html">Variables</a></li>
+								<li><a href="controlflow.html">Control Flow</a></li>
+								<li><a href="functions.html">Functions</a></li>
+								<li><a href="scope.html">Scope</a></li>
+								<li><a href="arrays.html">Arrays</a></li>
+								<li><a href="loops.html">Loops</a></li>
+								<li><a href="iterators.html">Iterators</a></li>
+								<li><a href="objects.html">Objects</a></li>
+								<li><a href="classes.html">Classes</a></li>
+								<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+								<li class="active"><a href="modules.html">Modules</a></li>
+								<li><a href="request1.html">Requests I</a></li>
+								<li><a href="request2.html">Requests II</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHP&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../php-course/introduction.html">Introduction to PHP</a></li>
+								<li><a href="../php-course/strings.html">PHP Strings and Variables</a></li>
+								<li><a href="../php-course/numbers.html">PHP Numbers</a></li>
+								<li><a href="../php-course/functions.html">Introduction to PHP Functions</a></li>
+								<li><a href="../php-course/builtin.html">Intro to Built-in PHP Functions</a></li>
+								<li><a href="../php-course/ordered.html">Ordered Arrays</a></li>
+								<li><a href="../php-course/associative.html">Associative Arrays</a></li>
+								<li><a href="../php-course/html.html">PHP and HTML</a></li>
+								<li><a href="../php-course/form.html">HTML Form Handling in PHP</a></li>
+								<li><a href="../php-course/comparison.html">Booleans and Comparison Operators</a></li>
+								<li><a href="../php-course/conditions.html">Logical Operators and Compound Conditions</a></li>
+								<li><a href="../php-course/loops.html">Loops</a></li>
+								<li><a href="../php-course/loops2.html">Loops in HTML</a></li>
+								<li><a href="../php-course/validation.html">Introduction to Form Validation</a></li>
+								<li><a href="../php-course/regex.html">Introduction to Regular Expressions</a></li>
+								<li><a href="../php-course/validation2.html">Introduction to PHP Form Validation</a></li>
+								<li><a href="../php-course/classes.html">Classes and Objects</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SQL&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../sql-course/manipulation.html">Manipulation</a></li>
+								<li><a href="../sql-course/queries.html">Queries</a></li>
+								<li><a href="../sql-course/functions.html">Aggregate Functions</a></li>
+								<li><a href="../sql-course/tables.html">Multiple Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Java&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../java-course/hello.html">Hello World</a></li>
+								<li><a href="../java-course/variables.html">Variables</a></li>
+								<li><a href="../java-course/manipulating.html">Manipulating Variables</a></li>
+								<li><a href="../java-course/classes.html">Introduction to Classes</a></li>
+								<li><a href="../java-course/methods.html">Methods</a></li>
+								<li><a href="../java-course/conditionals.html">Conditionals and Control Flow</a></li>
+								<li><a href="../java-course/operators.html">Conditional Operators</a></li>
+								<li><a href="../java-course/arrays.html">Arrays</a></li>
+								<li><a href="../java-course/arraylists.html">ArrayLists</a></li>
+								<li><a href="../java-course/loops.html">Loops</a></li>
+								<li><a href="../java-course/string.html">String Methods</a></li>
+								<li><a href="../java-course/inheritance.html">Inheritance and Polymorphism</a></li>
+								<li><a href="../java-course/debugging.html">Debugging</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../resources.html#command-line-resources">Command Line</a></li>
+								<li><a href="../resources.html#html-resources">HTML</a></li>
+								<li><a href="../resources.html#css-resources">CSS</a></li>
+								<li><a href="../resources.html#javascript-resources">JavaScript</a></li>
+								<li><a href="../resources.html#php-resources">PHP</a></li>
+								<li><a href="../resources.html#sql-resources">SQL</a></li>
+								<li><a href="../resources.html#java-resources">Java</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-            </div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<ol class="breadcrumb">
+				<li>JavaScript</li>
+				<li>Modules</li>
+			</ol>
+			<h2>Intermediate JavaScript Modules</h2>
+			<h3>Review</h3>
+			<p>We just learned how to use JavaScript modules. Let's review what we learned:</p>
+			<p>Modules in JavaScript are reusable pieces of code that can be exported from one program and imported for use in another program.</p>
+			<ul>
+				<li>module.exports_exports the module for use in another program.</li>
+				<li>require() imports the module for use in the current program.</li>
+			</ul>
+			<p>ES6 introduced a more flexible, easier syntax to export modules:</p>
+			<ul>
+				<li>default exports use export default to export JavaScript objects, functions, and primitive data types.</li>
+				<li>named exports use the export keyword to export data in variables.</li>
+				<li>named exports can be aliased with the as keyword.</li>
+				<li>import is a keyword that imports any object, function, or data type.</li>
+			</ul>
 		</div>
 
-		<script type="text/javascript">	
-		// Modules - Reusable pieces of code that can be exported from one program and imported for use in another
-		/* The pattern we use to export modules is thus:
-		   1. Define an object to represent the module.
-		   2. Add data or behavior to the module.
-		   3. Export the module. */
-		// Create and Export Airplane Module with module.exports
-		let Airplane = {};
-		
-		Airplane.myAirplane = "StarJet";
-		
-		module.exports = Airplane;
-		
-		/* The pattern to import a module is:
-		   1. Import the module
-		   2. Use the module and its properties within a program. */
-		// Import Airplane Module and Log Property to Console with require
-		const Airplane = require('./1-airplane.js');
-		
-		function displayAirplane() {
-			console.log(Airplane.myAirplane);  
-		}
-		
-		displayAirplane();
-		
-		// Repeat Steps Above from Scratch
-		let Airplane = {};
-		
-		module.exports = {
-			myAirplane: "CloudJet",
-			displayAirplane: function() {
-				return this.myAirplane;
-			}
-		};
-		
-		const Airplane = require('./2-airplane.js');
-		
-		console.log(Airplane.displayAirplane());
-		
-		// Default Export Syntax - Allows the export of one module per file
-		// When using ES6 syntax, we use export default in place of module.exports
-		// Create and Export Airplane Module with export default
-		let Airplane = {};
-		
-		Airplane.availableAirplanes = [
-			{
-				name: 'AeroJet',
-				fuelCapacity: 800
-			},
-			{
-				name: 'SkyJet',
-				fuelCapacity: 500
-			}
-		];
-		
-		export default Airplane;
-		// Import - Keyword for importing objects in ES6 module syntax
-		// When dealing with local files, refer to the file name without the extension
-		// Import Airplane Module and Log Properties to Console with import
-		import Airplane from './airplane';
-		
-		function displayFuelCapacity() {
-			Airplane.availableAirplanes.forEach(function(element) {
-				console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
-			});
-		}
-		
-		displayFuelCapacity();
-		
-		// Named Exports - Allows the export of data using variables
-		// Write Airplane Program with Named Exports
-		let availableAirplanes = [
-			{
-				name: 'AeroJet',
-				fuelCapacity: 800,
-				availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators']
-			},
-			{
-				name: 'SkyJet',
-				fuelCapacity: 500,
-				availableStaff: ['pilots', 'flightAttendants']
-			}
-		];
-		
-		let flightRequirements = {
-			requiredStaff: 4
-		};
-		
-		function meetsStaffRequirements(availableStaff, requiredStaff) {
-			if (availableStaff.length >= requiredStaff) {
-				return true;
-			} else {
-				return false;
-			}
-		};
-		
-		export {availableAirplanes, flightRequirements, meetsStaffRequirements};
-		
-		// Named Imports - Allows the import of objects stored in a variable
-		// Write Airplane Program with Named Imports
-		import {availableAirplanes, flightRequirements, meetsStaffRequirements} from './airplane';
-		
-		function displayFuelCapacity() {
-			availableAirplanes.forEach(function(element) {
-				console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);    
-			});
-		}
-		
-		displayFuelCapacity();
-		
-		function displayStaffStatus() {
-			availableAirplanes.forEach(function(element) {
-				console.log(element.name + ' meets staff requirements: ' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff));
-			});
-		}
-		
-		displayStaffStatus();
-		
-		// Write Airplane Program with Named Exports
-		export let availableAirplanes = [
-			{
-				name: 'AeroJet',
-				fuelCapacity: 800,
-				availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
-				maxSpeed: 1200,
-				minSpeed: 300
-			},
-			{
-				name: 'SkyJet',
-				fuelCapacity: 500,
-				availableStaff: ['pilots', 'flightAttendants'],
-				maxSpeed: 800,
-				minSpeed: 200
-			}
-		];
-		
-		export let flightRequirements = {
-			requiredStaff: 4,
-			requiredSpeedRange: 700
-		};
-		
-		export function meetsStaffRequirements(availableStaff, requiredStaff) {
-			if (availableStaff.length >= requiredStaff) {
-				return true;
-			} else {
-				return false;
-			}
-		};
+		<footer>
+			<div class="container">
+				<hr>
+				<div id="today"></div>
+			</div>
+		</footer>
 
-		export function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange) {
-			let range = maxSpeed - minSpeed;
-			if (range > requiredSpeedRange) {
-				return true;
-			} else {
-				return false;
+		<script type="text/javascript">	
+			// Modules - Reusable pieces of code that can be exported from one program and imported for use in another
+			/* The pattern we use to export modules is thus:
+			   1. Define an object to represent the module.
+			   2. Add data or behavior to the module.
+			   3. Export the module. */
+			// Create and Export Airplane Module with module.exports
+			let Airplane = {};
+			
+			Airplane.myAirplane = "StarJet";
+			
+			module.exports = Airplane;
+			
+			/* The pattern to import a module is:
+			   1. Import the module
+			   2. Use the module and its properties within a program. */
+			// Import Airplane Module and Log Property to Console with require
+			const Airplane = require('./1-airplane.js');
+			
+			function displayAirplane() {
+				console.log(Airplane.myAirplane);  
 			}
-		};
-		
-		// Give Aliases to Variables and Export with as Keyword
-		export {availableAirplanes as aircrafts, flightRequirements as flightReqs, meetsStaffRequirements as meetsStaffReqs, meetsSpeedRangeRequirements as meetsSpeedRangeReqs};
-		
-		// Import Aliased Variables
-		import {aircrafts, flightReqs, meetsStaffReqs, meetsSpeedRangeReqs} from './airplane';
-		
-		// While it's better to avoid combining two methods of exporting, it is useful on occasion - for example, if you suspect developers may only be interested in importing a specific function and won't need to import the entire default export.
-		// We can import the collection of objects and functions with the same data using an import keyword.
-		</script>	
+			
+			displayAirplane();
+			
+			// Repeat Steps Above from Scratch
+			let Airplane = {};
+			
+			module.exports = {
+				myAirplane: "CloudJet",
+				displayAirplane: function() {
+					return this.myAirplane;
+				}
+			};
+			
+			const Airplane = require('./2-airplane.js');
+			
+			console.log(Airplane.displayAirplane());
+			
+			// Default Export Syntax - Allows the export of one module per file
+			// When using ES6 syntax, we use export default in place of module.exports
+			// Create and Export Airplane Module with export default
+			let Airplane = {};
+			
+			Airplane.availableAirplanes = [
+				{
+					name: 'AeroJet',
+					fuelCapacity: 800
+				},
+				{
+					name: 'SkyJet',
+					fuelCapacity: 500
+				}
+			];
+			
+			export default Airplane;
+			// Import - Keyword for importing objects in ES6 module syntax
+			// When dealing with local files, refer to the file name without the extension
+			// Import Airplane Module and Log Properties to Console with import
+			import Airplane from './airplane';
+			
+			function displayFuelCapacity() {
+				Airplane.availableAirplanes.forEach(function(element) {
+					console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
+				});
+			}
+			
+			displayFuelCapacity();
+			
+			// Named Exports - Allows the export of data using variables
+			// Write Airplane Program with Named Exports
+			let availableAirplanes = [
+				{
+					name: 'AeroJet',
+					fuelCapacity: 800,
+					availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators']
+				},
+				{
+					name: 'SkyJet',
+					fuelCapacity: 500,
+					availableStaff: ['pilots', 'flightAttendants']
+				}
+			];
+			
+			let flightRequirements = {
+				requiredStaff: 4
+			};
+			
+			function meetsStaffRequirements(availableStaff, requiredStaff) {
+				if (availableStaff.length >= requiredStaff) {
+					return true;
+				} else {
+					return false;
+				}
+			};
+			
+			export {availableAirplanes, flightRequirements, meetsStaffRequirements};
+			
+			// Named Imports - Allows the import of objects stored in a variable
+			// Write Airplane Program with Named Imports
+			import {availableAirplanes, flightRequirements, meetsStaffRequirements} from './airplane';
+			
+			function displayFuelCapacity() {
+				availableAirplanes.forEach(function(element) {
+					console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);    
+				});
+			}
+			
+			displayFuelCapacity();
+			
+			function displayStaffStatus() {
+				availableAirplanes.forEach(function(element) {
+					console.log(element.name + ' meets staff requirements: ' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff));
+				});
+			}
+			
+			displayStaffStatus();
+			
+			// Write Airplane Program with Named Exports
+			export let availableAirplanes = [
+				{
+					name: 'AeroJet',
+					fuelCapacity: 800,
+					availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+					maxSpeed: 1200,
+					minSpeed: 300
+				},
+				{
+					name: 'SkyJet',
+					fuelCapacity: 500,
+					availableStaff: ['pilots', 'flightAttendants'],
+					maxSpeed: 800,
+					minSpeed: 200
+				}
+			];
+			
+			export let flightRequirements = {
+				requiredStaff: 4,
+				requiredSpeedRange: 700
+			};
+			
+			export function meetsStaffRequirements(availableStaff, requiredStaff) {
+				if (availableStaff.length >= requiredStaff) {
+					return true;
+				} else {
+					return false;
+				}
+			};
+
+			export function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange) {
+				let range = maxSpeed - minSpeed;
+				if (range > requiredSpeedRange) {
+					return true;
+				} else {
+					return false;
+				}
+			};
+			
+			// Give Aliases to Variables and Export with as Keyword
+			export {availableAirplanes as aircrafts, flightRequirements as flightReqs, meetsStaffRequirements as meetsStaffReqs, meetsSpeedRangeRequirements as meetsSpeedRangeReqs};
+			
+			// Import Aliased Variables
+			import {aircrafts, flightReqs, meetsStaffReqs, meetsSpeedRangeReqs} from './airplane';
+			
+			// While it's better to avoid combining two methods of exporting, it is useful on occasion - for example, if you suspect developers may only be interested in importing a specific function and won't need to import the entire default export.
+			// We can import the collection of objects and functions with the same data using an import keyword.
+		</script>
 	</body>	
 </html>

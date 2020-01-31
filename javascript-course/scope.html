@@ -2,107 +2,215 @@
 <html lang="en">
 	<head>	
 		<title>Introduction to JavaScript</title>	
-		<script src="../js/jquery.min.js"></script> <!-- jquery libraries -->
-		<script src="../js/handlebars-v3.0.3.js"></script> <!-- handlebars libraries -->
-		<script src="../js/bootstrap.min.js"></script> <!-- bootstrap libraries -->
-		<link href="../css/bootstrap_blue.css" rel="stylesheet"> <!-- bootstrap styling -->	
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->	
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/handlebars-v3.0.3.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/date.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap_plain.css">
+		<link rel="stylesheet" href="../css/styles.css">
 	</head>
 	
 	<body>
-		<div id="container">
-			<div class="row">
-				<div class="col-md-2">
-					<div id="content_left">
-						<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-							<li><a href="introduction.html">Introduction</a></li>
-							<li><a href="variables.html">Variables</a></li>
-							<li><a href="controlflow.html">Control Flow</a></li>
-							<li><a href="functions.html">Functions</a></li>
-							<li class="active"><a href="scope.html">Scope</a></li>
-							<li><a href="arrays.html">Arrays</a></li>
-							<li><a href="loops.html">Loops</a></li>
-							<li><a href="iterators.html">Iterators</a></li>
-							<li><a href="objects.html">Objects</a></li>
-							<li><a href="classes.html">Classes</a></li>
-							<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
-							<li><a href="modules.html">Modules</a></li>
-							<li><a href="request1.html">Requests I</a></li>
-							<li><a href="request2.html">Requests II</a></li>
-							<li><a href="../index.html">&larr; Back to Courses</a></li>
-						</ul>
-					</div>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="../index.html">Codecademy Courses</a></h1>
 				</div>
-				<div class="col-md-10">
-					<div id="content_right">
-						<h1>Introduction to JavaScript</h1>
-						<h2>Scope</h2>
-						<h3>Review: Scope</h3>
-						<p>This unit introduced you to scope.</p>
-						<ul>
-							<li>Scope is the idea in programming that some variables are accessible/inaccessible from other parts of the program.</li>
-							<li>Global Scope refers to variables that are accessible to every part of the program.</li>
-							<li>Block Scope refers to variables that are accessible only within the block they are defined.</li>
-						</ul>
-					</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Command Line&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../command-line-course/navigating.html">Navigating the File System</a></li>
+								<li><a href="../command-line-course/viewing.html">Viewing and Changing the File System</a></li>
+								<li><a href="../command-line-course/redirecting.html">Redirecting Input and Output</a></li>
+								<li><a href="../command-line-course/configuring.html">Configuring the Environment</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HTML&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../html-course/introduction.html">Introduction to HTML</a></li>
+								<li><a href="../html-course/standards.html">HTML Document Standards</a></li>
+								<li><a href="../html-course/tables.html">Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CSS&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../css-course/selectors.html">CSS Setup and Selectors</a></li>
+								<li><a href="../css-course/rules.html">CSS Visual Rules</a></li>
+								<li><a href="../css-course/model.html">The Box Model</a></li>
+								<li><a href="../css-course/changing.html">Changing the Box Model</a></li>
+								<li><a href="../css-course/display.html">CSS Display and Positioning</a></li>
+								<li><a href="../css-course/color.html">CSS Color</a></li>
+								<li><a href="../css-course/typography.html">CSS Typography</a></li>
+								<li><a href="../css-course/grid.html">CSS Grid Essentials</a></li>
+								<li><a href="../css-course/advanced.html">Advanced CSS Grid</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="introduction.html">Introduction</a></li>
+								<li><a href="variables.html">Variables</a></li>
+								<li><a href="controlflow.html">Control Flow</a></li>
+								<li><a href="functions.html">Functions</a></li>
+								<li class="active"><a href="scope.html">Scope</a></li>
+								<li><a href="arrays.html">Arrays</a></li>
+								<li><a href="loops.html">Loops</a></li>
+								<li><a href="iterators.html">Iterators</a></li>
+								<li><a href="objects.html">Objects</a></li>
+								<li><a href="classes.html">Classes</a></li>
+								<li><a href="browser.html">Browser Compatibility and Transpilation</a></li>
+								<li><a href="modules.html">Modules</a></li>
+								<li><a href="request1.html">Requests I</a></li>
+								<li><a href="request2.html">Requests II</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PHP&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../php-course/introduction.html">Introduction to PHP</a></li>
+								<li><a href="../php-course/strings.html">PHP Strings and Variables</a></li>
+								<li><a href="../php-course/numbers.html">PHP Numbers</a></li>
+								<li><a href="../php-course/functions.html">Introduction to PHP Functions</a></li>
+								<li><a href="../php-course/builtin.html">Intro to Built-in PHP Functions</a></li>
+								<li><a href="../php-course/ordered.html">Ordered Arrays</a></li>
+								<li><a href="../php-course/associative.html">Associative Arrays</a></li>
+								<li><a href="../php-course/html.html">PHP and HTML</a></li>
+								<li><a href="../php-course/form.html">HTML Form Handling in PHP</a></li>
+								<li><a href="../php-course/comparison.html">Booleans and Comparison Operators</a></li>
+								<li><a href="../php-course/conditions.html">Logical Operators and Compound Conditions</a></li>
+								<li><a href="../php-course/loops.html">Loops</a></li>
+								<li><a href="../php-course/loops2.html">Loops in HTML</a></li>
+								<li><a href="../php-course/validation.html">Introduction to Form Validation</a></li>
+								<li><a href="../php-course/regex.html">Introduction to Regular Expressions</a></li>
+								<li><a href="../php-course/validation2.html">Introduction to PHP Form Validation</a></li>
+								<li><a href="../php-course/classes.html">Classes and Objects</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SQL&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../sql-course/manipulation.html">Manipulation</a></li>
+								<li><a href="../sql-course/queries.html">Queries</a></li>
+								<li><a href="../sql-course/functions.html">Aggregate Functions</a></li>
+								<li><a href="../sql-course/tables.html">Multiple Tables</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Java&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../java-course/hello.html">Hello World</a></li>
+								<li><a href="../java-course/variables.html">Variables</a></li>
+								<li><a href="../java-course/manipulating.html">Manipulating Variables</a></li>
+								<li><a href="../java-course/classes.html">Introduction to Classes</a></li>
+								<li><a href="../java-course/methods.html">Methods</a></li>
+								<li><a href="../java-course/conditionals.html">Conditionals and Control Flow</a></li>
+								<li><a href="../java-course/operators.html">Conditional Operators</a></li>
+								<li><a href="../java-course/arrays.html">Arrays</a></li>
+								<li><a href="../java-course/arraylists.html">ArrayLists</a></li>
+								<li><a href="../java-course/loops.html">Loops</a></li>
+								<li><a href="../java-course/string.html">String Methods</a></li>
+								<li><a href="../java-course/inheritance.html">Inheritance and Polymorphism</a></li>
+								<li><a href="../java-course/debugging.html">Debugging</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="../resources.html#command-line-resources">Command Line</a></li>
+								<li><a href="../resources.html#html-resources">HTML</a></li>
+								<li><a href="../resources.html#css-resources">CSS</a></li>
+								<li><a href="../resources.html#javascript-resources">JavaScript</a></li>
+								<li><a href="../resources.html#php-resources">PHP</a></li>
+								<li><a href="../resources.html#sql-resources">SQL</a></li>
+								<li><a href="../resources.html#java-resources">Java</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-            </div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<ol class="breadcrumb">
+				<li>JavaScript</li>
+				<li>Scope</li>
+			</ol>
+			<h2>Scope</h2>
+			<h3>Review: Scope</h3>
+			<p>This unit introduced you to scope.</p>
+			<ul>
+				<li>Scope is the idea in programming that some variables are accessible/inaccessible from other parts of the program.</li>
+				<li>Global Scope refers to variables that are accessible to every part of the program.</li>
+				<li>Block Scope refers to variables that are accessible only within the block they are defined.</li>
+			</ul>
 		</div>
 
+		<footer>
+			<div class="container">
+				<hr>
+				<div id="today"></div>
+			</div>
+		</footer>
+
 		<script type="text/javascript">	
-		// Scope - Where a variable can be accessed in a program, depends on where a variable is declared
-		// Global Scope - Variables declared outside of a block and available throughout a program, makes data accessible from any place within a program
-		// Write and Call myNightSky Function with Global Scope
-		const satellite = 'The Moon';
-		const galaxy = 'The Milky Way';
-		let stars = 'North Star';
-		
-		const myNightSky = () => {
-			return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
-		};
-		
-		console.log(myNightSky());
-		
-		// Avoid defining variables in the global scope as they can collide with variables that are more locally scoped
-		// Block Scope - Variables defined in a block and only accessible within it
-		// Write and Call visibleLightWaves Function with Block Scope - Error Thrown!
-		const visibleLightWaves = () => {
-			let lightWaves = 'Moonlight';
-			console.log(lightWaves);
-		};
-		
-		visibleLightWaves();
-		console.log(lightWaves);
-		
-		// Update and Call visibleLightWaves Function with If Statement and Block Scope
-		const visibleLightWaves = () => {
-			let lightWaves = 'Moonlight';
-			let region = 'The Arctic';
-			if (region === 'The Arctic')  {
-				let lightWaves = 'Northern Lights'; 
+			// Scope - Where a variable can be accessed in a program, depends on where a variable is declared
+			// Global Scope - Variables declared outside of a block and available throughout a program, makes data accessible from any place within a program
+			// Write and Call myNightSky Function with Global Scope
+			const satellite = 'The Moon';
+			const galaxy = 'The Milky Way';
+			let stars = 'North Star';
+			
+			const myNightSky = () => {
+				return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
+			};
+			
+			console.log(myNightSky());
+			
+			// Avoid defining variables in the global scope as they can collide with variables that are more locally scoped
+			// Block Scope - Variables defined in a block and only accessible within it
+			// Write and Call visibleLightWaves Function with Block Scope - Error Thrown!
+			const visibleLightWaves = () => {
+				let lightWaves = 'Moonlight';
 				console.log(lightWaves);
-			}
+			};
+			
+			visibleLightWaves();
 			console.log(lightWaves);
-		};
-		
-		visibleLightWaves();
-		
-		// Write and Call starCount Function with For Loop and Block Scope - Error Thrown!
-		const starCount = () => {
-			let i = 5;
-			console.log(i);
-			for (let i = 0; i < 12; i++) {
+			
+			// Update and Call visibleLightWaves Function with If Statement and Block Scope
+			const visibleLightWaves = () => {
+				let lightWaves = 'Moonlight';
+				let region = 'The Arctic';
+				if (region === 'The Arctic')  {
+					let lightWaves = 'Northern Lights'; 
+					console.log(lightWaves);
+				}
+				console.log(lightWaves);
+			};
+			
+			visibleLightWaves();
+			
+			// Write and Call starCount Function with For Loop and Block Scope - Error Thrown!
+			const starCount = () => {
+				let i = 5;
 				console.log(i);
-			}
-		};
-		
-		starCount();
-		console.log(i);
-		</script>	
+				for (let i = 0; i < 12; i++) {
+					console.log(i);
+				}
+			};
+			
+			starCount();
+			console.log(i);
+		</script>
 	</body>	
 </html>
